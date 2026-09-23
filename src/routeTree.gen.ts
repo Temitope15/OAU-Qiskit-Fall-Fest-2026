@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as R2024RouteImport } from './routes/2024'
 import { Route as R2025RouteImport } from './routes/2025'
 import { Route as R2026RouteImport } from './routes/2026'
+import { Route as HackathonRouteImport } from './routes/hackathon'
 import { Route as PartnershipRouteImport } from './routes/partnership'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const R2026Route = R2026RouteImport.update({
   path: '/2026',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HackathonRoute = HackathonRouteImport.update({
+  id: '/hackathon',
+  path: '/hackathon',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PartnershipRoute = PartnershipRouteImport.update({
   id: '/partnership',
   path: '/partnership',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/2024': typeof R2024Route
   '/2025': typeof R2025Route
   '/2026': typeof R2026Route
+  '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/2024': typeof R2024Route
   '/2025': typeof R2025Route
   '/2026': typeof R2026Route
+  '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,22 @@ export interface FileRoutesById {
   '/2024': typeof R2024Route
   '/2025': typeof R2025Route
   '/2026': typeof R2026Route
+  '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/2024' | '/2025' | '/2026' | '/partnership'
+  fullPaths: '/' | '/2024' | '/2025' | '/2026' | '/hackathon' | '/partnership'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/2024' | '/2025' | '/2026' | '/partnership'
-  id: '__root__' | '/' | '/2024' | '/2025' | '/2026' | '/partnership'
+  to: '/' | '/2024' | '/2025' | '/2026' | '/hackathon' | '/partnership'
+  id:
+    | '__root__'
+    | '/'
+    | '/2024'
+    | '/2025'
+    | '/2026'
+    | '/hackathon'
+    | '/partnership'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +92,7 @@ export interface RootRouteChildren {
   R2024Route: typeof R2024Route
   R2025Route: typeof R2025Route
   R2026Route: typeof R2026Route
+  HackathonRoute: typeof HackathonRoute
   PartnershipRoute: typeof PartnershipRoute
 }
 
@@ -109,6 +126,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof R2026RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/hackathon': {
+      id: '/hackathon'
+      path: '/hackathon'
+      fullPath: '/hackathon'
+      preLoaderRoute: typeof HackathonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/partnership': {
       id: '/partnership'
       path: '/partnership'
@@ -124,6 +148,7 @@ const rootRouteChildren: RootRouteChildren = {
   R2024Route: R2024Route,
   R2025Route: R2025Route,
   R2026Route: R2026Route,
+  HackathonRoute: HackathonRoute,
   PartnershipRoute: PartnershipRoute,
 }
 export const routeTree = rootRouteImport

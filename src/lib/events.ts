@@ -25,7 +25,7 @@ export const eventYears: EventYear[] = [
     year: "2026",
     status: "Upcoming",
     title: "Young Nigerian minds",
-    summary: "Two focused programmes for secondary and university students, built around access and practice.",
+    summary: "A focused hackathon, secondary school outreach, and problem-solving challenges.",
     href: "/2026",
   },
 ];
