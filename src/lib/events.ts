@@ -48,7 +48,7 @@ export const schools2026 = [
 ];
 /** Registration form for both secondary school and university participants.
  *  Replace with the Google Form link once it is ready. */
-export const registerUrl = "#register";
+export const registerUrl = "/register";
 
 export const hackathonTracks = [
   {

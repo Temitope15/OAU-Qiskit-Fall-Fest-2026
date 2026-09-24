@@ -15,6 +15,7 @@ import { Route as R2025RouteImport } from './routes/2025'
 import { Route as R2026RouteImport } from './routes/2026'
 import { Route as HackathonRouteImport } from './routes/hackathon'
 import { Route as PartnershipRouteImport } from './routes/partnership'
+import { Route as RegisterRouteImport } from './routes/register'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,11 @@ const PartnershipRoute = PartnershipRouteImport.update({
   path: '/partnership',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/2026': typeof R2026Route
   '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
+  '/register': typeof RegisterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/2026': typeof R2026Route
   '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
+  '/register': typeof RegisterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,12 +79,27 @@ export interface FileRoutesById {
   '/2026': typeof R2026Route
   '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
+  '/register': typeof RegisterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/2024' | '/2025' | '/2026' | '/hackathon' | '/partnership'
+  fullPaths:
+    | '/'
+    | '/2024'
+    | '/2025'
+    | '/2026'
+    | '/hackathon'
+    | '/partnership'
+    | '/register'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/2024' | '/2025' | '/2026' | '/hackathon' | '/partnership'
+  to:
+    | '/'
+    | '/2024'
+    | '/2025'
+    | '/2026'
+    | '/hackathon'
+    | '/partnership'
+    | '/register'
   id:
     | '__root__'
     | '/'
@@ -85,6 +108,7 @@ export interface FileRouteTypes {
     | '/2026'
     | '/hackathon'
     | '/partnership'
+    | '/register'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -94,6 +118,7 @@ export interface RootRouteChildren {
   R2026Route: typeof R2026Route
   HackathonRoute: typeof HackathonRoute
   PartnershipRoute: typeof PartnershipRoute
+  RegisterRoute: typeof RegisterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -140,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PartnershipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -150,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   R2026Route: R2026Route,
   HackathonRoute: HackathonRoute,
   PartnershipRoute: PartnershipRoute,
+  RegisterRoute: RegisterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
