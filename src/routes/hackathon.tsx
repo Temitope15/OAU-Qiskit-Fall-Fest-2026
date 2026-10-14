@@ -165,6 +165,56 @@ function ScrollRevealCurtain({ children }: { children: ReactNode }) {
 }
 
 
+/** Purely decorative "scroll emulator": columns of quantum terms that drift up
+ *  and down forever, like a live stream of the problem space scrolling past. */
+const streamA = ["Qiskit", "Superposition", "QAOA", "Energy", "Qubits", "Hybrid", "Benchmark", "Entanglement"];
+const streamB = ["Optimization", "Hamiltonian", "Logistics", "VQE", "Measurement", "Agriculture", "Shor", "Ansatz"];
+const streamC = ["Grover", "Finance", "Decoherence", "Healthcare", "Simulation", "Telecoms", "Gates", "Nigeria"];
+
+const streamColors = ["bg-[#4285F4]", "bg-[#FBBC04]", "bg-[#34A853]", "bg-[#EA4335]"];
+
+function ScrollColumn({ terms, dir, offset = 0 }: { terms: string[]; dir: "up" | "down"; offset?: number }) {
+  const doubled = [...terms, ...terms];
+  return (
+    <div className="scroll-emulator-mask h-[20rem] md:h-[26rem] overflow-hidden">
+      <div className={`scroll-emulator-col ${dir} flex flex-col gap-4`}>
+        {doubled.map((term, i) => {
+          const color = streamColors[(i + offset) % streamColors.length];
+          const textColor = color === "bg-[#FBBC04]" ? "text-black" : "text-white";
+          return (
+            <div key={`${term}-${i}`} className={`${color} ${textColor} border-[3px] border-white rounded-xl px-5 py-4 font-black text-center text-lg whitespace-nowrap`}>
+              {term}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function ScrollEmulator() {
+  return (
+    <section aria-hidden className="w-full border-b-4 border-black bg-black py-16 overflow-hidden">
+      <div className="site-container">
+        <div className="flex items-center gap-3 mb-10 font-mono text-xs md:text-sm uppercase tracking-widest text-white/70">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-[#34A853] opacity-75 animate-ping" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#34A853]" />
+          </span>
+          // live_problem_stream
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          <ScrollColumn terms={streamA} dir="up" offset={0} />
+          <ScrollColumn terms={streamB} dir="down" offset={1} />
+          <div className="hidden md:block">
+            <ScrollColumn terms={streamC} dir="up" offset={2} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const tracks = [
   { id: "energy", title: "Energy", icon: Zap, color: "bg-[#4285F4]", question: "How can we optimize electricity distribution when supply is unreliable and demand varies?", areas: ["Grid optimization", "Load balancing", "Battery placement"] },
   { id: "logistics", title: "Logistics", icon: Truck, color: "bg-[#FBBC04]", question: "How can we move goods across Nigerian cities more efficiently despite traffic and road conditions?", areas: ["Vehicle routing", "Fleet scheduling", "Warehouse allocation"] },
@@ -230,6 +280,9 @@ function HackathonPage() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#FBBC04] rounded-bl-full opacity-20 pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-[#4285F4] rounded-t-full opacity-20 pointer-events-none" />
       </section>
+
+      {/* Decorative scroll emulator */}
+      <ScrollEmulator />
 
       {/* 1. The Challenge (Scroll Window Opening) */}
       <section id="challenge" className="w-full min-h-[85vh] flex flex-col justify-center py-20 border-b-4 border-black bg-white">

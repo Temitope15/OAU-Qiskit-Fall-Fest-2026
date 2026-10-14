@@ -3,7 +3,7 @@ export type EventYear = {
   status: "Concluded" | "Archive in progress" | "Upcoming";
   title: string;
   summary: string;
-  href: "/2024" | "/2025" | "/2026";
+  href: "/2024" | "/2025" | "/";
 };
 
 export const eventYears: EventYear[] = [
@@ -26,7 +26,7 @@ export const eventYears: EventYear[] = [
     status: "Upcoming",
     title: "Young Nigerian minds",
     summary: "A focused hackathon, secondary school outreach, and problem-solving challenges.",
-    href: "/2026",
+    href: "/",
   },
 ];
 

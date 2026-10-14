@@ -913,3 +913,56 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ----------------------------------------------------------------------------
+   Registration "boom" pop — fires when the CTA scrolls into view (2026 page).
+   ------------------------------------------------------------------------- */
+@keyframes boom-pop {
+  0%   { transform: scale(.2) rotate(-8deg); opacity: 0; }
+  55%  { transform: scale(1.18) rotate(2deg); opacity: 1; }
+  75%  { transform: scale(.94) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Radiating shock rings behind the badge. */
+@keyframes boom-ring {
+  0%   { transform: scale(.3); opacity: .7; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes boom-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .boom[data-shown="true"] .boom-badge { animation: boom-pop .7s cubic-bezier(.22,1.2,.4,1) both; }
+  .boom[data-shown="true"] .boom-ring { animation: boom-ring .9s ease-out both; }
+  .boom[data-shown="true"] .boom-ring-2 { animation: boom-ring .9s ease-out .15s both; }
+  .boom[data-shown="true"] .boom-cta { animation: boom-shake .5s ease-in-out .35s 1; }
+}
+
+/* Reduced-motion / pre-reveal: keep everything visible and still. */
+.boom .boom-badge { opacity: 1; }
+.boom .boom-ring, .boom .boom-ring-2 { opacity: 0; }
+
+/* ----------------------------------------------------------------------------
+   Hackathon "scroll emulator" — columns that drift up / down forever.
+   ------------------------------------------------------------------------- */
+@keyframes marquee-up   { from { transform: translateY(0); }     to { transform: translateY(-50%); } }
+@keyframes marquee-down { from { transform: translateY(-50%); }  to { transform: translateY(0); } }
+
+.scroll-emulator-col { will-change: transform; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-emulator-col.up   { animation: marquee-up 22s linear infinite; }
+  .scroll-emulator-col.down { animation: marquee-down 26s linear infinite; }
+}
+
+.scroll-emulator-mask {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+}
