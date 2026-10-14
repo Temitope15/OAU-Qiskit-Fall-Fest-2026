@@ -8,8 +8,8 @@ function doPost(e) {
 
   try {
     const data = JSON.parse(e.postData.contents);
-    const formType = data.type; // "hackathon" or "volunteer"
-    
+    const formType = data.type; // "hackathon" or "attendee"
+
     // Open the active spreadsheet
     const doc = SpreadsheetApp.getActiveSpreadsheet();
     
@@ -48,23 +48,25 @@ function doPost(e) {
         team1, team2, team3, team4
       ]);
       
-    } else if (formType === "volunteer") {
-      const sheet = doc.getSheetByName("Volunteers") || doc.insertSheet("Volunteers");
-      
+    } else if (formType === "attendee") {
+      const sheet = doc.getSheetByName("Attendees") || doc.insertSheet("Attendees");
+
       if (sheet.getLastRow() === 0) {
         sheet.appendRow([
-          "Timestamp", "Full Name", "Email", "WhatsApp", 
-          "University", "Preferred Role"
+          "Timestamp", "Full Name", "Email", "WhatsApp",
+          "School / University", "Category", "Wants to volunteer", "Volunteer Team"
         ]);
       }
-      
+
       sheet.appendRow([
         new Date().toISOString(),
         data.fullName,
         data.email,
         data.whatsapp,
         data.university,
-        data.preferredRole
+        data.category,
+        data.wantsToVolunteer ? "Yes" : "No",
+        data.wantsToVolunteer ? (data.volunteerTeam || "") : ""
       ]);
     }
 
