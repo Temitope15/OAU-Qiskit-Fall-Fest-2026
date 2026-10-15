@@ -599,7 +599,7 @@ function PartnershipPage() {
               <span>Meet the solvers.</span>
             </div>
             <a 
-              href="mailto:oaudsc@gmail.com?subject=Sponsorship%20Inquiry%3A%20Quantum%20Advantage%20for%20Nigeria"
+              href="mailto:info@gdgoau.com?subject=Sponsorship%20Inquiry%3A%20Quantum%20Advantage%20for%20Nigeria"
               className="relative z-10 bg-[#FBBC04] text-black px-6 py-4 md:px-10 md:py-5 rounded-2xl font-black text-xl md:text-2xl inline-flex items-center justify-center gap-4 transition-transform hover:-translate-y-2 border-[4px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] cursor-pointer"
             >
               <Handshake className="w-8 h-8" />

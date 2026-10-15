@@ -16,7 +16,7 @@ function Page() {
         <Link to="/2024" className="bg-[#f1f3f4] px-4 py-2 border-[3px] border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-black hover:-translate-y-1 transition-transform flex items-center gap-2">
           <ArrowLeft className="w-4 h-4" /> Back to 2024
         </Link>
-        <Link to="/2026" className="bg-black text-white px-4 py-2 border-[3px] border-black rounded-lg shadow-[2px_2px_0px_0px_#FBBC04] font-black hover:-translate-y-1 transition-transform flex items-center gap-2">
+        <Link to="/" className="bg-black text-white px-4 py-2 border-[3px] border-black rounded-lg shadow-[2px_2px_0px_0px_#FBBC04] font-black hover:-translate-y-1 transition-transform flex items-center gap-2">
           Forward to 2026 <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
@@ -68,7 +68,7 @@ function Page() {
                 This edition belongs in the story—even before its archive is complete.
               </h2>
             </div>
-            <Link to="/2026" className="shrink-0 bg-white text-black px-8 py-5 rounded-2xl border-[4px] border-[#4285F4] shadow-[6px_6px_0px_0px_#4285F4] font-black text-xl hover:-translate-y-1 transition-transform flex items-center gap-3">
+            <Link to="/" className="shrink-0 bg-white text-black px-8 py-5 rounded-2xl border-[4px] border-[#4285F4] shadow-[6px_6px_0px_0px_#4285F4] font-black text-xl hover:-translate-y-1 transition-transform flex items-center gap-3">
               Continue to 2026 <ArrowRight className="w-6 h-6" />
             </Link>
           </div>

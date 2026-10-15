@@ -14,8 +14,8 @@ export function SiteFooter() {
         <div className="flex flex-col items-start gap-4 md:items-end">
           <Link to="/2024" className="font-black text-xl hover:bg-black hover:text-white px-4 py-2 border-2 border-transparent hover:border-black rounded-xl transition-all">2024 archive</Link>
           <Link to="/2025" className="font-black text-xl hover:bg-black hover:text-white px-4 py-2 border-2 border-transparent hover:border-black rounded-xl transition-all">2025 archive</Link>
-          <Link to="/2026" className="font-black text-xl hover:bg-black hover:text-white px-4 py-2 border-2 border-transparent hover:border-black rounded-xl transition-all">2026 programme</Link>
-          <Link to="/partnership" className="font-black text-xl hover:bg-black hover:text-white px-4 py-2 border-2 border-transparent hover:border-black rounded-xl transition-all inline-flex items-center gap-2">Partnership <ArrowUpRight className="w-6 h-6" /></Link>
+          <Link to="/" className="font-black text-xl hover:bg-black hover:text-white px-4 py-2 border-2 border-transparent hover:border-black rounded-xl transition-all">2026 programme</Link>
+          <a href="mailto:info@gdgoau.com?subject=Sponsorship%20enquiry%20%E2%80%94%20Qiskit%20Fall%20Fest%20OAU" className="font-black text-xl hover:bg-black hover:text-white px-4 py-2 border-2 border-transparent hover:border-black rounded-xl transition-all inline-flex items-center gap-2">Sponsor us <ArrowUpRight className="w-6 h-6" /></a>
         </div>
       </div>
       <div className="site-container border-t-[4px] border-black pt-12">
