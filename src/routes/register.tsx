@@ -68,7 +68,7 @@ function RegisterPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbx9YPoJnJHp7Wug19Eb4Vp7cGPfcYOL0wV4hDX3hTKZ45Uepf4r2sjw7qM9pTUbmH9HvA/exec";
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbwOjUxz-7Dq6H_WUPXYz0iAshkXZ34Haq1V1nXrzwk7msd1n5_b3n-3Is-asWEyHFcLJw/exec";
 
     try {
       // We MUST use mode: "no-cors" for Google Apps Script to prevent redirect CORS errors
