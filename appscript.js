@@ -76,56 +76,67 @@ function doPost(e) {
     if (!e || !e.postData || !e.postData.contents) {
       throw new Error("No POST body received.");
     }
-
-    let data;
-    try {
-      data = JSON.parse(e.postData.contents);
-    } catch (parseError) {
-      throw new Error("Body was not valid JSON: " + String(parseError));
-    }
-
+    const data = JSON.parse(e.postData.contents);
     const formType = data.type; // "hackathon" or "attendee"
-    const doc = getSpreadsheet_();
 
+    // Open the active spreadsheet
+    const doc = SpreadsheetApp.getActiveSpreadsheet();
+    
     if (formType === "hackathon") {
-      const teammates = Array.isArray(data.teamMembers) ? data.teamMembers : [];
-      const fmt = (t) => (t && t.name ? t.name + " (" + (t.email || "") + ") - " + (t.role || "") : "");
+      const sheet = doc.getSheetByName("Hackathon") || doc.insertSheet("Hackathon");
+      
+      // If the sheet is empty, add headers
+      if (sheet.getLastRow() === 0) {
+        sheet.appendRow([
+          "Timestamp", "Full Name", "Email", "WhatsApp", 
+          "University", "Course of Study", "Level", "Stack", 
+          "Target Industry", "Participation Mode", "Team Name", 
+          "Teammate 1", "Teammate 2", "Teammate 3", "Teammate 4"
+        ]);
+      }
+      
+      // Format teammate strings
+      const teammates = data.teamMembers || [];
+      const team1 = teammates[0] ? `${teammates[0].name} (${teammates[0].email}) - ${teammates[0].role}` : "";
+      const team2 = teammates[1] ? `${teammates[1].name} (${teammates[1].email}) - ${teammates[1].role}` : "";
+      const team3 = teammates[2] ? `${teammates[2].name} (${teammates[2].email}) - ${teammates[2].role}` : "";
+      const team4 = teammates[3] ? `${teammates[3].name} (${teammates[3].email}) - ${teammates[3].role}` : "";
 
-      appendToSheet_(
-        doc,
-        "Hackathon",
-        [
-          "Timestamp", "Full Name", "Email", "WhatsApp",
-          "University", "Course of Study", "Level", "Stack",
-          "Target Industry", "Participation Mode", "Team Name",
-          "Teammate 1", "Teammate 2", "Teammate 3", "Teammate 4",
-        ],
-        [
-          new Date().toISOString(),
-          data.fullName || "", data.email || "", data.whatsapp || "", data.university || "",
-          data.department || "", data.level || "", data.stack || "", data.targetIndustry || "",
-          data.participationMode || "", data.teamName || "",
-          fmt(teammates[0]), fmt(teammates[1]), fmt(teammates[2]), fmt(teammates[3]),
-        ]
-      );
-
+      sheet.appendRow([
+        new Date().toISOString(),
+        data.fullName,
+        data.email,
+        data.whatsapp,
+        data.university,
+        data.department,
+        data.level,
+        data.stack,
+        data.targetIndustry,
+        data.participationMode,
+        data.teamName || "",
+        team1, team2, team3, team4
+      ]);
+      
     } else if (formType === "attendee") {
-      appendToSheet_(
-        doc,
-        "Attendees",
-        [
-          "Timestamp", "Full Name", "Email", "WhatsApp",
-          "School / University", "Category", "Wants to volunteer", "Volunteer Team",
-        ],
-        [
-          new Date().toISOString(),
-          data.fullName || "", data.email || "", data.whatsapp || "", data.university || "",
-          data.category || "",
-          data.wantsToVolunteer ? "Yes" : "No",
-          data.wantsToVolunteer ? (data.volunteerTeam || "") : "",
-        ]
-      );
+      const sheet = doc.getSheetByName("Attendees") || doc.insertSheet("Attendees");
 
+      if (sheet.getLastRow() === 0) {
+        sheet.appendRow([
+          "Timestamp", "Full Name", "Email", "WhatsApp",
+          "School / University", "Category", "Wants to volunteer", "Volunteer Team"
+        ]);
+      }
+
+      sheet.appendRow([
+        new Date().toISOString(),
+        data.fullName,
+        data.email,
+        data.whatsapp,
+        data.university,
+        data.category,
+        data.wantsToVolunteer ? "Yes" : "No",
+        data.wantsToVolunteer ? (data.volunteerTeam || "") : ""
+      ]);
     } else {
       // Don't lose anything: capture unexpected payloads, then flag it.
       appendToSheet_(
