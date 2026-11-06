@@ -11,21 +11,21 @@ export const eventYears: EventYear[] = [
     year: "2024",
     status: "Concluded",
     title: "The first signal",
-    summary: "A 24-day learning challenge that grew into an examination, hackathon, and final gathering.",
+    summary: "Established OAU's quantum student community and had a virtual speaker from Yale University, USA (20+ attendees).",
     href: "/2024",
   },
   {
     year: "2025",
     status: "Archive in progress",
     title: "Momentum",
-    summary: "The bridge between our first edition and a wider ambition for quantum education in Nigeria.",
+    summary: "Organized the inaugural secondary school outreach event at Fadehan International College, Ile-Ife (50+ attendees).",
     href: "/2025",
   },
   {
     year: "2026",
     status: "Upcoming",
-    title: "Young Nigerian minds",
-    summary: "Secondary school outreach, expert keynotes, technical sessions, and code jams at Opolo Hub.",
+    title: "Pushing limits",
+    summary: "Held at Opolo Hub. Hands-on lab sessions for secondary school and university students, global keynote speakers, etc. (100+ attendees).",
     href: "/",
   },
 ];
@@ -39,8 +39,7 @@ export const programme2024 = [
   ["23 Nov", "Final event", "Community talks, celebration, and the closing gathering."],
 ] as const;
 
-/** Schools being reached for the 2026 outreach. Final list (four schools,
- *  ten students each) is still being confirmed. */
+/** 5 local secondary schools in Ile-Ife participating in the outreach (40 students total). */
 export const schools2026 = [
   "Fadehan College",
   "Moremi High School",
@@ -71,14 +70,25 @@ export type Speaker = {
 
 export const speakers: Speaker[] = [
   {
-    name: "Powel Gora",
-    role: "Founder, QWorld",
-    talk: "Pushing Beyond the Limits",
+    name: "Pawel Gora",
+    role: "Founder & CEO, Quantum AI Foundation · Board Member, QWorld",
+    talk: "Pushing Beyond the Limits in Quantum Computing",
     summary:
-      "Opening our minds to the areas and use cases where young Nigerians can stand out and contribute to innovation in quantum computing.",
+      "Exposing students to frontier applications where early researchers can innovate and stand out in quantum computing.",
     day: "Saturday",
     mode: "Virtual",
-    photo: "/speakers/powel-gora.jpg",
+    photo: "/speakers/pawel-gora.jpg",
+    keynote: true,
+  },
+  {
+    name: "Catherine Wanjiru",
+    role: "Software Engineer, IBM · Quantum Technical Contributor",
+    talk: "Getting Started in Quantum with IBM",
+    summary:
+      "Inspiring young African innovators with real-world developer tools, cloud quantum execution, and career insight from IBM.",
+    day: "Friday",
+    mode: "Virtual",
+    photo: "/speakers/catherine-wanjiru.jpg",
     keynote: true,
   },
   {
@@ -86,35 +96,27 @@ export const speakers: Speaker[] = [
     role: "Delegate, African Quantum Consortium",
     talk: "Quantum Education & Capacity Building",
     summary:
-      "Fostering a research culture among Nigerian students: navigating grad school applications, exploring quantum startup creation, and finding related opportunities.",
+      "Fostering university research culture, grad school applications, quantum startup creation, and finding related opportunities.",
     day: "Saturday",
     mode: "In person",
     photo: "/speakers/favour-alfred.jpg",
   },
   {
     name: "Dr Fadodun",
-    role: "Faculty Advisor, OAU",
-    talk: "Rudiments of Quantum Computing",
+    role: "Dept of Physics, OAU · Faculty Advisor",
+    talk: "Physics & Mathematics Rudiments",
     summary:
-      "A technical session on the physics and mathematics behind quantum computing, launching us into the technical sessions.",
-    day: "Saturday",
+      "Explaining mathematical foundations and quantum mechanics to launch students into the technical sessions.",
+    day: "Friday",
     mode: "In person",
     photo: "/team/dr-fadodun.jpg",
   },
   {
-    name: "IBM Quantum Speaker",
-    role: "IBM Quantum · To be announced",
-    talk: "Getting Started in Quantum Computing",
-    summary: "Addressing the young generation on how to take their first real steps into quantum computing.",
-    day: "Saturday",
-    mode: "Virtual",
-    photo: "/speakers/ibm.jpg",
-  },
-  {
     name: "Mr Ini Ukut",
     role: "Head, QNigeria",
-    talk: "Career Paths in Quantum Computing",
-    summary: "The career paths quantum computing opens up, and how students can start walking them early.",
+    talk: "Quantum Career Pathways",
+    summary:
+      "Navigating emerging opportunities across algorithm development, quantum hardware research, and advocacy.",
     day: "Friday",
     mode: "Virtual",
     photo: "/speakers/ini-ukut.jpg",

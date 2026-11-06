@@ -42,7 +42,7 @@ const impactPillars = [
     color: "bg-[#FBBC04]",
     textColor: "text-black",
     title: "Empower the Next Generation of Scientists",
-    desc: "We are inviting 40 secondary school students across four schools in Ile-Ife for a hands-on introduction to Qiskit. With dedicated laptops on site, every student will build their own quantum Bell state before the day ends.",
+    desc: "We are inviting 40 secondary school students across 5 local schools in Ile-Ife for a hands-on introduction to Qiskit. With dedicated laptops on site, every student will build their own quantum Bell state before the day ends.",
   },
   {
     icon: BookOpen,
@@ -56,45 +56,46 @@ const impactPillars = [
     color: "bg-[#34A853]",
     textColor: "text-white",
     title: "Reward Academic Excellence & Innovation",
-    desc: "Saturday's live Code Jams & Challenges put students' quantum programming skills to the test, rewarding the top 3 performers and encouraging deep technical mastery.",
+    desc: "Fund the ₦250,000 cash prize pool awarded to the Top 3 student teams in Saturday's quantum coding challenges, encouraging deep technical mastery.",
   },
 ];
 
 const budgetItems = [
-  { item: "Venue (Opolo Innovation Hub · both days)", amount: "₦120,000" },
-  { item: "Refreshments (both days)", amount: "₦120,000" },
-  { item: "Code Jam & Challenge Prizes (Top 3 participants)", amount: "₦50,000" },
-  { item: "Prints & Publicity", amount: "₦15,000" },
-  { item: "Internet Connection", amount: "₦10,000" },
+  { item: "Refreshments (Both Days)", amount: "₦220,000" },
+  { item: "Venue Hire (Opolo Innovation Hub)", amount: "₦130,000" },
+  { item: "Code Jam Merit Cash Prize Pool", amount: "₦250,000" },
+  { item: "Prints & Event Publicity", amount: "₦40,000" },
+  { item: "Dedicated High-Speed Internet", amount: "₦15,000" },
+  { item: "Miscellanies & Contingency", amount: "₦50,000" },
 ];
 
 const patronTiers = [
   {
     name: "Grand Festival Patron",
-    naira: "₦350,000",
-    usd: "~$250 USD",
+    naira: "₦705,000",
+    usd: "~$480 USD",
     badge: "Full Festival Underwriter",
     accent: "bg-[#FBBC04]",
     border: "border-black",
-    desc: "Underwrites 100% of Qiskit Fall Fest OAU 2026 — powering both days at Opolo Hub, student refreshments, the secondary school Bell State lab, and the Saturday Code Jam prizes.",
+    desc: "Underwrites 100% of Qiskit Fall Fest OAU 2026 — powering both days at Opolo Hub, student refreshments, the secondary school Bell State lab, and the Saturday ₦250,000 quantum coding challenge prize pool.",
   },
   {
     name: "Quantum Pioneer Patron",
-    naira: "₦150,000",
-    usd: "~$100 USD",
+    naira: "₦350,000",
+    usd: "~$240 USD",
     badge: "Core Infrastructure",
     accent: "bg-[#4285F4]",
     border: "border-black",
-    desc: "Underwrites a full major pillar of the festival — such as the two-day venue & technical setup at Opolo Innovation Hub or festival-wide student refreshments.",
+    desc: "Underwrites major pillars of the festival — such as venue hire at Opolo Innovation Hub and festival-wide refreshments for both days.",
   },
   {
     name: "Next-Gen Talent Patron",
-    naira: "₦50,000",
-    usd: "~$35 USD",
+    naira: "₦250,000",
+    usd: "~$170 USD",
     badge: "Direct Student Impact",
     accent: "bg-[#34A853]",
     border: "border-black",
-    desc: "Underwrites the Saturday Code Jam merit prize pool for the top 3 student problem-solvers, or powers connectivity, publicity, and learning materials for the secondary school outreach.",
+    desc: "Directly funds the ₦250,000 cash prize pool awarded to the Top 3 student teams in Saturday's quantum coding challenges.",
   },
 ];
 
@@ -154,7 +155,7 @@ function SponsorPage() {
           </h1>
 
           <p className="text-xl md:text-2xl font-bold leading-relaxed max-w-3xl bg-black text-white p-6 md:p-8 rounded-2xl border-[4px] border-[#FBBC04] shadow-[6px_6px_0px_0px_#FBBC04]">
-            We are inviting you to invest in the future of African scientific talent. Your sponsorship directly builds the infrastructure for young Nigerian minds to learn, build, and lead in quantum computing.
+            We are inviting visionary organizations and individuals to directly fund and empower the next generation of Nigerian scientific minds. Your sponsorship directly builds the infrastructure for young Nigerian minds to learn, build, and lead in quantum computing.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -222,16 +223,20 @@ function SponsorPage() {
               <span className="inline-block bg-[#34A853] text-white font-black uppercase tracking-widest text-xs px-3 py-1.5 rounded-lg border-2 border-black mb-4">
                 Day 1 · Friday, 27 November · 10 AM – 2 PM
               </span>
-              <h3 className="text-3xl md:text-4xl font-black mb-4">Secondary School Outreach & Career Talk</h3>
+              <h3 className="text-3xl md:text-4xl font-black mb-2">Secondary School Outreach & Career Talk</h3>
+              <p className="font-mono font-bold text-sm text-[#0F9D58] uppercase tracking-wider mb-4">
+                Inviting 40 secondary students across 5 local schools in Ile-Ife
+              </p>
               <p className="font-bold text-gray-800 leading-relaxed mb-6">
-                40 students from 4 secondary schools in Ile-Ife (10 students per school) gather at {venue}, joined by university students for the Friday career session:
+                40 students from 5 local secondary schools in Ile-Ife gather at {venue}, joined by university students:
               </p>
               <ul className="space-y-3 font-bold text-gray-900">
-                <li>✦ Opening & gentle introduction to quantum computing</li>
-                <li>✦ Career Paths in Quantum Computing — Mr Ini Ukut (Head, QNigeria)</li>
-                <li>✦ Refreshment & networking break</li>
-                <li>✦ Hands-on Qiskit workshop (10+ laptops): every student builds a Bell state</li>
-                <li>✦ Certificates of participation</li>
+                <li>✦ 10:00 AM — Opening & gentle introduction to quantum computing</li>
+                <li>✦ 10:15 AM — Career Paths in Quantum Computing — Mr Ini Ukut (Head, QNigeria)</li>
+                <li>✦ 10:45 AM — Keynote Session from an IBM Employee (Catherine Wanjiru)</li>
+                <li>✦ 11:15 AM — Refreshment & networking break</li>
+                <li>✦ 11:30 AM — Hands-on Lab Session (10+ dedicated laptops: building a Bell state in Qiskit)</li>
+                <li>✦ Certificates of participation for all attendees</li>
               </ul>
             </div>
 
@@ -239,17 +244,20 @@ function SponsorPage() {
               <span className="inline-block bg-[#4285F4] text-white font-black uppercase tracking-widest text-xs px-3 py-1.5 rounded-lg border-2 border-black mb-4">
                 Day 2 · Saturday, 28 November · 10 AM – 4 PM
               </span>
-              <h3 className="text-3xl md:text-4xl font-black mb-4">Keynotes, Technical Sessions & Code Jams</h3>
+              <h3 className="text-3xl md:text-4xl font-black mb-2">Keynotes, Technical Sessions & Code Jams</h3>
+              <p className="font-mono font-bold text-sm text-[#4285F4] uppercase tracking-wider mb-4">
+                For Undergraduates & Advanced Students from OAU Campus & Beyond
+              </p>
               <p className="font-bold text-gray-800 leading-relaxed mb-6">
-                A full day for university students and young researchers at {venue}, combining global perspectives, deep theory, and live coding challenges:
+                A full day combining global perspectives, deep theory, and live quantum coding challenges with a ₦250,000 prize pool:
               </p>
               <ul className="space-y-3 font-bold text-gray-900">
-                <li>✦ Keynote: Pushing Beyond the Limits — Powel Gora (Founder, QWorld)</li>
+                <li>✦ Keynote: Pushing Beyond the Limits — Pawel Gora (Founder, QWorld)</li>
                 <li>✦ Quantum Education & Capacity Building — Favour Alfred (African Quantum Consortium)</li>
                 <li>✦ Rudiments of Quantum Computing (Physics & Mathematics) — Dr Fadodun</li>
-                <li>✦ Getting Started in Quantum Computing — IBM Quantum Guest Speaker</li>
                 <li>✦ Refreshment & networking break</li>
-                <li>✦ Live Code Jams & Challenges + awards & certificates of participation</li>
+                <li>✦ 01:15 PM — Live Quantum Coding Challenges (Intensive algorithmic sprints)</li>
+                <li>✦ 04:00 PM — ₦250,000 Awards Ceremony, Certificates & Finale</li>
               </ul>
             </div>
           </div>
@@ -269,7 +277,7 @@ function SponsorPage() {
             Transparent budget breakdown.
           </h2>
           <p className="text-xl font-bold text-gray-800 mb-12 max-w-3xl">
-            Every contribution goes directly toward hosting the students at {venue}, running the hands-on sessions, and rewarding excellence in the Code Jams.
+            Every contribution goes directly toward hosting the students at {venue}, running the hands-on sessions, and funding the ₦250,000 Code Jam merit prize pool.
           </p>
 
           <div className="bg-white rounded-[2rem] border-[5px] border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] overflow-hidden">
@@ -280,17 +288,12 @@ function SponsorPage() {
                   <span className="font-mono font-black text-xl md:text-2xl text-black">{row.amount}</span>
                 </div>
               ))}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 md:px-10 bg-[#f1f3f4]">
-                <span className="font-black text-lg md:text-xl text-gray-700">Subtotal</span>
-                <span className="font-mono font-black text-xl md:text-2xl text-gray-800">₦315,000</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 md:px-10 bg-[#f1f3f4]">
-                <span className="font-bold text-lg md:text-xl text-gray-700">Miscellaneous (10%)</span>
-                <span className="font-mono font-black text-xl md:text-2xl text-gray-800">₦31,500</span>
-              </div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-8 md:px-10 bg-[#FBBC04]">
                 <span className="font-black text-2xl md:text-3xl text-black uppercase tracking-tight">Total Festival Budget</span>
-                <span className="font-mono font-black text-3xl md:text-4xl text-black">₦346,500</span>
+                <div className="text-right">
+                  <div className="font-mono font-black text-3xl md:text-4xl text-black">₦705,000</div>
+                  <div className="font-mono font-bold text-sm text-gray-800">~$480 USD</div>
+                </div>
               </div>
             </div>
           </div>
@@ -307,7 +310,7 @@ function SponsorPage() {
             Three ways to underwrite the festival.
           </h2>
           <p className="text-xl font-bold text-gray-700 mb-16 max-w-3xl">
-            You can sponsor a specific tier below or contribute any custom amount toward the ₦346,500 budget.
+            You can sponsor a specific tier below or contribute any custom amount toward the ₦705,000 budget.
           </p>
 
           <div className="grid lg:grid-cols-3 gap-8 mb-16">

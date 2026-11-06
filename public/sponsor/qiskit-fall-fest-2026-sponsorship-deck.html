@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Qiskit Fall Fest 2026 — Sponsorship Deck (10 Pages)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-page: #FAF3DE;
+    --color-black: #111111;
+    --color-gdg-blue: #4285F4;
+    --color-gdg-red: #EA4335;
+    --color-gdg-yellow: #FBBC04;
+    --color-gdg-green: #34A853;
+    --color-qiskit: #8A3FFC;
+    --color-mint: #55EBB7;
+    --color-pink: #FF9BB2;
+    --border-thick: 3.5px solid #111111;
+    --border-heavy: 4.5px solid #111111;
+    --shadow-sm: 5px 5px 0px #111111;
+    --shadow-md: 8px 8px 0px #111111;
+    --shadow-lg: 12px 12px 0px #111111;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #E2DAC5;
+    color: var(--color-black);
+    font-family: 'Manrope', -apple-system, sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px 80px 10px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .deck-nav {
+    position: fixed;
+    top: 16px;
+    z-index: 1000;
+    background: #FFFFFF;
+    border: var(--border-thick);
+    border-radius: 9999px;
+    box-shadow: var(--shadow-md);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .deck-nav button {
+    background: #FAF3DE;
+    border: 2.5px solid #111111;
+    border-radius: 9999px;
+    padding: 8px 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px #111111;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .deck-nav button.primary-btn {
+    background: var(--color-qiskit);
+    color: #FFFFFF;
+  }
+
+  .slide-counter {
+    font-family: 'DM Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    background: #F1F5F9;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid #CBD5E1;
+  }
+
+  .deck-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 70px;
+  }
+
+  .slide {
+    background-color: var(--bg-page);
+    width: 1200px;
+    height: 1764px;
+    max-height: 1764px;
+    min-height: 1764px;
+    border: var(--border-heavy);
+    border-radius: 44px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    padding: 60px 68px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    box-sizing: border-box;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  .slide-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .slide-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .slide-brand-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: -0.03em;
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pill-year {
+    border: 2.5px solid #111111;
+    border-radius: 9999px;
+    padding: 3px 14px;
+    font-size: 18px;
+    font-weight: 800;
+    background: #FFFFFF;
+  }
+
+  .slide-hashtag {
+    background: var(--color-gdg-green);
+    color: #FFFFFF;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    padding: 8px 24px;
+    border: 3px solid #111111;
+    border-radius: 9999px;
+    box-shadow: 3px 3px 0px #111111;
+  }
+
+  .white-board {
+    background: #FFFFFF;
+    border: 4px solid #111111;
+    border-radius: 38px;
+    box-shadow: var(--shadow-md);
+    padding: 54px 56px;
+    flex: 1;
+    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .cover-board {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 40px 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .slide-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 60px;
+    flex-shrink: 0;
+  }
+
+  .footer-subtext {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #222;
+  }
+
+  .footer-tab-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #FFFFFF;
+    border: var(--border-thick);
+    border-radius: 9999px;
+    padding: 8px 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .footer-circle-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #FAF3DE;
+    border: 2.5px solid #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  .footer-year {
+    border: 2.5px solid #111111;
+    border-radius: 9999px;
+    padding: 4px 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  .footer-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: var(--border-thick);
+    border-radius: 9999px;
+    padding: 10px 28px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 12px;
+    align-self: flex-start;
+  }
+
+  .section-pill.blue { background: #70CFFF; }
+  .section-pill.green { background: var(--color-mint); }
+  .section-pill.yellow { background: var(--color-gdg-yellow); }
+  .section-pill.pink { background: var(--color-pink); }
+
+  h1.deck-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+  }
+
+  h2.slide-h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+
+  p.deck-lead {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #475569;
+    max-width: 980px;
+  }
+
+  .neo-box {
+    background: #FFFFFF;
+    border: var(--border-thick);
+    border-radius: 26px;
+    box-shadow: var(--shadow-sm);
+    box-sizing: border-box;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .tier-row {
+    background: #FFFFFF;
+    border: 4px solid #111111;
+    border-radius: 26px;
+    padding: 24px 34px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .tier-badge {
+    display: inline-flex;
+    align-items: center;
+    border: 2.5px solid #111111;
+    border-radius: 9999px;
+    padding: 5px 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .tier-pill {
+    display: inline-block;
+    background: #F1F5F9;
+    border: 2px solid #111111;
+    border-radius: 9999px;
+    padding: 6px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1E293B;
+  }
+
+  .neo-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 4px solid #111111;
+    border-radius: 26px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background: #FFFFFF;
+  }
+
+  .neo-table th {
+    background: #111111;
+    color: #FFFFFF;
+    padding: 18px 26px;
+    text-align: left;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .neo-table td {
+    padding: 16px 26px;
+    border-bottom: 2px solid #E2E8F0;
+    font-size: 21px;
+    vertical-align: middle;
+  }
+
+  .neo-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .neo-table tr.total-row td {
+    background: #FAF3DE;
+    font-weight: 900;
+    font-size: 25px;
+    border-top: 3.5px solid #111111;
+    padding: 18px 26px;
+  }
+
+  @media print {
+    @page {
+      size: 1200px 1764px;
+      margin: 0;
+    }
+    body {
+      background: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .deck-nav { display: none !important; }
+    .deck-container {
+      gap: 0 !important;
+      margin-top: 0 !important;
+      max-width: none !important;
+      width: 1200px !important;
+    }
+    .slide {
+      box-shadow: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+      page-break-after: always !important;
+      break-after: page !important;
+      width: 1200px !important;
+      height: 1764px !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck-nav" id="deckNav">
+  <button onclick="prevSlide()">&#8592; Prev</button>
+  <div class="slide-counter" id="slideCounter">Slide 1 / 10</div>
+  <button onclick="nextSlide()">Next &#8594;</button>
+  <button class="primary-btn" onclick="togglePresentation()">&#9638; Presentation Mode</button>
+</div>
+
+<div class="deck-container" id="deckContainer">
+
+  <!-- ==================== SLIDE 1: COVER ==================== -->
+  <div class="slide" id="slide-1" data-page="1">
+    <div class="slide-header">
+      <div class="slide-brand">
+        <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+        <div class="slide-brand-title">
+          Qiskit Fall Fest <span class="pill-year">2026</span>
+        </div>
+      </div>
+      <div class="slide-brand" style="gap: 12px;">
+        <svg width="40" height="40" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="40" height="40" rx="10" fill="#8A3FFC" stroke="#111" stroke-width="3"/>
+      <circle cx="15" cy="15" r="5" fill="#55EBB7" stroke="#111" stroke-width="2"/>
+      <circle cx="29" cy="29" r="5" fill="#FBBC04" stroke="#111" stroke-width="2"/>
+      <circle cx="29" cy="15" r="5" fill="#FFFFFF" stroke="#111" stroke-width="2"/>
+      <circle cx="15" cy="29" r="5" fill="#EA4335" stroke="#111" stroke-width="2"/>
+      <line x1="15" y1="15" x2="29" y2="29" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="3 3"/>
+      <line x1="29" y1="15" x2="15" y2="29" stroke="#FFFFFF" stroke-width="2.5"/>
+    </svg>
+      </div>
+    </div>
+    <div class="cover-board">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 800; letter-spacing: 0.15em; margin-bottom: 24px; color: #475569;">OAU · ILE-IFE</div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 38px;">
+        <span style="font-size: 42px; font-weight: 900;">*</span>
+        <span style="font-size: 42px; font-weight: 900;">&mdash;&gt;</span>
+        <span style="font-size: 42px; font-weight: 900;">*</span>
+        <span style="font-size: 42px; font-weight: 900;">&#123;</span>
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </div>
+      <div style="background: var(--color-mint); border: var(--border-heavy); border-radius: 9999px; padding: 18px 64px; font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 900; box-shadow: var(--shadow-md); margin-bottom: 36px; display: inline-block;">
+        GDG ON CAMPUS OAU
+      </div>
+      <h1 class="deck-title">Sponsorship<br>Proposal Deck</h1>
+      <p style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 700; color: #1E293B; max-width: 860px; margin-bottom: 50px; line-height: 1.4;">
+        Investing in Africa's Next Generation of Quantum Pioneers
+      </p>
+      <div style="background: #FFFFFF; border: var(--border-thick); border-radius: 26px; padding: 22px 52px; box-shadow: var(--shadow-sm); display: inline-flex; align-items: center; gap: 20px; margin-bottom: 56px;">
+        <span style="font-family: 'DM Mono', monospace; font-size: 26px; font-weight: 700;">November 27th & 28th, 2026</span>
+        <span style="width: 12px; height: 12px; border-radius: 50%; background: #111;"></span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 800; color: var(--color-gdg-blue);">Opolo Innovation Hub, OAU</span>
+      </div>
+      <div style="display: flex; gap: 20px; justify-content: center; align-items: center;">
+        <span style="width: 56px; height: 56px; border-radius: 50%; background: #111; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 22px;">X</span>
+        <span style="width: 56px; height: 56px; border-radius: 50%; background: #111; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 22px;">IG</span>
+        <span style="width: 56px; height: 56px; border-radius: 50%; background: #111; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 22px;">in</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 25px; margin-left: 14px;">@gdgoau &nbsp;|&nbsp; oaudsc@gmail.com</span>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; height: 50px;">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 800; color: #334155;">Google Developer Groups · Obafemi Awolowo University</div>
+      <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 20px; color: #475569;">#QFFOAU2026</div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 2: ABOUT THE FESTIVAL ==================== -->
+  <div class="slide" id="slide-2" data-page="2">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#AboutEvent</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill blue">About QFF OAU 2026</div>
+        <h2 class="slide-h2">Building Africa's Quantum Pioneers</h2>
+        <p class="deck-lead">
+          A high-impact 2-day summit transitioning students from theoretical physics into live cloud quantum computing.
+        </p>
+      </div>
+      <div class="grid-2" style="gap: 32px; flex: 1; align-content: center;">
+        <div class="neo-box" style="padding: 44px 38px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: var(--color-mint); border: 3px solid #111; border-radius: 9999px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 30px; margin-bottom: 20px;">1</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 12px;">Quantum SDKs & Qiskit</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.6;">Hands-on circuit construction, superposition, and cloud execution on real IBM Quantum QPUs.</p>
+          </div>
+        </div>
+        <div class="neo-box" style="padding: 44px 38px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: var(--color-gdg-yellow); border: 3px solid #111; border-radius: 9999px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 30px; margin-bottom: 20px;">2</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 12px;">Mathematical Rigor</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.6;">Bedrock foundations in linear algebra, Hilbert space, state vectors, and quantum entanglement.</p>
+          </div>
+        </div>
+        <div class="neo-box" style="padding: 44px 38px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: var(--color-pink); border: 3px solid #111; border-radius: 9999px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 30px; margin-bottom: 20px;">3</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 12px;">Code Jams & Challenges</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.6;">Intensive live algorithmic sprints awarding cash prizes to top student problem solvers.</p>
+          </div>
+        </div>
+        <div class="neo-box" style="padding: 44px 38px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: #70CFFF; border: 3px solid #111; border-radius: 9999px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 30px; margin-bottom: 20px;">4</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 12px;">Secondary STEM Outreach</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.6;">Inviting 40 secondary students across 5 local schools in Ile-Ife.</p>
+          </div>
+        </div>
+      </div>
+      <div style="background: #F8FAFC; border: var(--border-thick); border-radius: 20px; padding: 24px 36px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 21px; font-weight: 700; color: #334155;">✦ Advancing Great Ife students to the frontier of computation and research fellowships.</span>
+        <span style="font-family: 'DM Mono', monospace; font-weight: 800; font-size: 20px; color: var(--color-qiskit);">Direct Impact</span>
+      </div>
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">2</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- ==================== SLIDE 3: 3-YEAR TRACK RECORD ==================== -->
+  <div class="slide" id="slide-3" data-page="3">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#TrackRecord</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill yellow">3-Year Growth</div>
+        <h2 class="slide-h2">From "First Signal" to National Leadership</h2>
+        <p class="deck-lead">
+          Now in its 3rd consecutive edition, Qiskit Fall Fest at OAU is Nigeria's premier campus quantum community.
+        </p>
+      </div>
+
+      <div class="grid-2" style="gap: 28px; flex: 1; align-content: center;">
+        <!-- EDITION 1 -->
+        <div class="neo-box" style="padding: 40px 36px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <div style="background: var(--color-mint); border: 3px solid #111; border-radius: 9999px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 30px;">1</div>
+              <span style="font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 800; color: var(--color-gdg-blue); background: #EFF6FF; border: 2.5px solid #111; border-radius: 9999px; padding: 4px 16px;">20+ Attendees</span>
+            </div>
+            <div style="font-family: 'DM Mono', monospace; font-size: 18px; font-weight: 700; color: #64748B; margin-bottom: 4px;">2024 · EDITION 1</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 12px;">"First Signal"</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.6;">
+              Established OAU's quantum student community and had a virtual speaker from Yale University, USA.
+            </p>
+          </div>
+        </div>
+
+        <!-- EDITION 2 -->
+        <div class="neo-box" style="padding: 40px 36px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <div style="background: var(--color-gdg-yellow); border: 3px solid #111; border-radius: 9999px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 30px;">2</div>
+              <span style="font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 800; color: var(--color-gdg-green); background: #F0FDF4; border: 2.5px solid #111; border-radius: 9999px; padding: 4px 16px;">50+ Attendees</span>
+            </div>
+            <div style="font-family: 'DM Mono', monospace; font-size: 18px; font-weight: 700; color: #64748B; margin-bottom: 4px;">2025 · EDITION 2</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 12px;">"Momentum"</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.6;">
+              Organized the inaugural secondary school outreach event at Fadehan International College, Ile-Ife.
+            </p>
+          </div>
+        </div>
+
+        <!-- EDITION 3 (FLAGSHIP) -->
+        <div class="neo-box" style="grid-column: 1 / span 2; background: #FAF3DE; border: 4px solid #111; padding: 38px 40px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div style="background: var(--color-pink); border: 3px solid #111; border-radius: 9999px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 30px;">3</div>
+                <div>
+                  <div style="font-family: 'DM Mono', monospace; font-size: 18px; font-weight: 800; color: var(--color-gdg-red);">2026 · EDITION 3</div>
+                  <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 34px; font-weight: 900; margin: 0;">"Pushing Limits"</h3>
+                </div>
+              </div>
+              <span style="font-family: 'DM Mono', monospace; font-size: 22px; font-weight: 900; color: var(--color-qiskit); background: #FEF08A; border: 2.5px solid #111; border-radius: 9999px; padding: 6px 20px;">100+ Students</span>
+            </div>
+            <p style="font-size: 23px; color: #1E293B; line-height: 1.65; margin: 0;">
+              Held at Opolo Hub. Hands-on lab sessions for secondary school and university students. Global Keynote Speakers, etc.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #F8FAFC; border: var(--border-thick); border-radius: 20px; padding: 24px 36px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 21px; font-weight: 700; color: #334155;">✦ A proven history of sustainable, year-on-year community leadership in quantum science.</span>
+        <span style="font-family: 'DM Mono', monospace; font-weight: 800; font-size: 20px; color: var(--color-qiskit);">Annual Trajectory</span>
+      </div>
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">3</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- ==================== SLIDE 4: WHY SUPPORT ==================== -->
+  <div class="slide" id="slide-4" data-page="4">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#InvestInTalent</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill blue">Why Support?</div>
+        <h2 class="slide-h2">Investing in Africa's Future Talents</h2>
+        <p class="deck-lead" style="font-weight: 700; color: #1E293B;">
+          We are inviting visionary organizations and individuals to directly fund and empower the next generation of Nigerian scientific minds.
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; padding: 10px 0; gap: 28px;">
+        <div class="neo-box" style="display: flex; gap: 32px; align-items: center; padding: 44px 44px;">
+          <div style="background: var(--color-gdg-blue); color: #fff; width: 72px; height: 72px; border-radius: 22px; border: 3px solid #111; display: flex; align-items: center; justify-content: center; font-size: 36px; flex-shrink: 0;">✦</div>
+          <div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 8px;">Empower 40 High School Prodigies</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.5;">Directly sponsor 40 top science students from 5 Ile-Ife secondary schools as they write their very first quantum code in Qiskit.</p>
+          </div>
+        </div>
+        <div class="neo-box" style="display: flex; gap: 32px; align-items: center; padding: 44px 44px;">
+          <div style="background: var(--color-qiskit); color: #fff; width: 72px; height: 72px; border-radius: 22px; border: 3px solid #111; display: flex; align-items: center; justify-content: center; font-size: 36px; flex-shrink: 0;">✦</div>
+          <div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 8px;">Foster an Authentic Research Culture</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.5;">Bridge academic theory with practical quantum software, preparing Nigerian undergraduates for top international grad school fellowships.</p>
+          </div>
+        </div>
+        <div class="neo-box" style="display: flex; gap: 32px; align-items: center; padding: 44px 44px;">
+          <div style="background: var(--color-mint); color: #111; width: 72px; height: 72px; border-radius: 22px; border: 3px solid #111; display: flex; align-items: center; justify-content: center; font-size: 36px; flex-shrink: 0;">✦</div>
+          <div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 8px;">Reward Academic Excellence</h3>
+            <p style="font-size: 22px; color: #475569; line-height: 1.5;">Fund the ₦250,000 cash prize pool awarded to the Top 3 student teams in Saturday's quantum coding challenges.</p>
+          </div>
+        </div>
+      </div>
+      <div style="background: #F8FAFC; border: var(--border-thick); border-radius: 24px; padding: 26px 36px; display: flex; align-items: center; justify-content: space-between; box-shadow: 4px 4px 0px #111;">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 800; color: #1E293B;">🌟 100% of contributions directly support student access, venue power, lab laptops & prizes.</span>
+        <span style="font-family: 'DM Mono', monospace; font-weight: 800; font-size: 20px; color: var(--color-qiskit);">Direct Impact</span>
+      </div>
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">4</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- ==================== SLIDE 5: 2-DAY SCHEDULE & VENUE ==================== -->
+  <div class="slide" id="slide-5" data-page="5">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#Agenda</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill pink">Event Schedule & Venue</div>
+        <h2 class="slide-h2">Opolo Innovation Hub, OAU (Both Days)</h2>
+        <p class="deck-lead">
+          A dedicated tech innovation center with uninterrupted power, high-speed fibre internet, and projection facilities.
+        </p>
+      </div>
+      <div class="grid-2" style="gap: 32px; flex: 1; align-content: center;">
+        <div class="neo-box" style="padding: 40px 36px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: #70CFFF; border: 3px solid #111; border-radius: 9999px; padding: 6px 20px; font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 18px; display: inline-block; margin-bottom: 18px;">DAY 1 · FRIDAY, NOV 27</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 900; margin-bottom: 22px;">Foundations & Secondary Outreach</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 18px; font-size: 20px; color: #334155;">
+              <li><b>10:00 AM</b> — Welcome & Opening Remarks</li>
+              <li><b>10:45 AM</b> — Keynote Session from an IBM Employee (Catherine Wanjiru)</li>
+              <li><b>11:30 AM</b> — Hands-on Lab Session</li>
+              <li><b>01:00 PM</b> — <span style="background: #FAF3DE; padding: 3px 12px; border: 2px solid #111; border-radius: 8px; font-weight: 800;">Refreshment & Networking Break</span></li>
+              <li><b>01:30 PM</b> — Physics & Math Rudiments (Dr. Fadodun)</li>
+              <li><b>02:15 PM</b> — Quantum Career Pathways (Mr. Ini Ukut)</li>
+              <li><b>03:00 PM</b> — Wrap-up & Day 1 Certificates</li>
+            </ul>
+          </div>
+        </div>
+        <div class="neo-box" style="padding: 40px 36px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="background: var(--color-mint); border: 3px solid #111; border-radius: 9999px; padding: 6px 20px; font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 18px; display: inline-block; margin-bottom: 14px;">DAY 2 · SATURDAY, NOV 28</div>
+            <div style="font-size: 17px; font-weight: 800; color: var(--color-qiskit); margin-bottom: 6px;">For Undergraduates & Advanced Students from OAU & Beyond</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 900; margin-bottom: 20px;">Global Keynote, Code Jam & Awards</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 18px; font-size: 20px; color: #334155;">
+              <li><b>10:00 AM</b> — Global Keynote: Pushing Limits (Pawel Gora)</li>
+              <li><b>11:00 AM</b> — Capacity Building Talk (Favour Alfred)</li>
+              <li><b>11:45 AM</b> — Advanced Quantum SDK Session</li>
+              <li><b>12:30 PM</b> — <span style="background: #FAF3DE; padding: 3px 12px; border: 2px solid #111; border-radius: 8px; font-weight: 800;">Refreshment & Networking Break</span></li>
+              <li><b>01:15 PM</b> — Live Quantum Coding Challenges</li>
+              <li><b>03:30 PM</b> — Benchmark Judging & Review</li>
+              <li><b>04:00 PM</b> — ₦250,000 Awards Ceremony & Finale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="background: #FAF3DE; border: var(--border-thick); border-radius: 22px; padding: 22px 34px; display: flex; align-items: center; justify-content: space-between; box-shadow: 4px 4px 0px #111;">
+        <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 22px;">📍 Opolo Innovation Hub, OAU</span>
+        <span style="font-size: 20px; color: #475569;">— Uninterrupted Power • High-Speed Fibre • Full Air-Conditioning • Nov 28 open to OAU & beyond</span>
+      </div>
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">5</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- ==================== SLIDE 6: DISTINGUISHED SPEAKERS & MENTORS ==================== -->
+  <div class="slide" id="slide-6" data-page="6">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#Speakers</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill green">Mentors & Keynotes</div>
+        <h2 class="slide-h2">World-Class Scientific Mentorship</h2>
+        <p class="deck-lead">
+          Connecting students directly with global quantum pioneers, IBM engineering talent, and academic leaders.
+        </p>
+      </div>
+
+      <!-- Top Row: 2 Major Keynote Speakers -->
+      <div class="grid-2" style="gap: 24px;">
+        <div class="neo-box" style="padding: 30px 32px; background: #FFFFFF;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 900;">Pawel Gora</h3>
+            <span style="background: #70CFFF; border: 2px solid #111; border-radius: 9999px; padding: 4px 14px; font-size: 15px; font-weight: 800;">KEYNOTE</span>
+          </div>
+          <div style="font-size: 18px; font-weight: 800; color: #64748B; margin-bottom: 8px;">Founder & CEO, Quantum AI Foundation · Board Member, QWorld</div>
+          <div style="font-weight: 800; font-size: 19px; color: var(--color-qiskit); margin-bottom: 6px;">"Pushing Beyond the Limits in Quantum Computing"</div>
+          <p style="font-size: 18px; color: #475569; line-height: 1.45;">Exposing students to frontier applications where early researchers can innovate and stand out.</p>
+        </div>
+
+        <div class="neo-box" style="padding: 30px 32px; background: #FAF3DE; border: 3.5px solid #111;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 900;">Catherine Wanjiru</h3>
+            <span style="background: var(--color-mint); border: 2px solid #111; border-radius: 9999px; padding: 4px 14px; font-size: 15px; font-weight: 800;">IBM KEYNOTE</span>
+          </div>
+          <div style="font-size: 18px; font-weight: 800; color: #64748B; margin-bottom: 8px;">Software Engineer, IBM · Quantum Technical Contributor</div>
+          <div style="font-weight: 800; font-size: 19px; color: var(--color-qiskit); margin-bottom: 6px;">"Keynote: Getting Started in Quantum with IBM"</div>
+          <p style="font-size: 18px; color: #1E293B; line-height: 1.45;">Inspiring young African innovators with real-world developer tools and cloud quantum execution.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Row: 3 Distinguished Mentors -->
+      <div class="grid-3" style="gap: 20px;">
+        <div class="neo-box" style="padding: 26px 22px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 900;">Favour Alfred</div>
+          <div style="font-size: 16px; font-weight: 800; color: var(--color-qiskit); margin: 4px 0;">African Quantum Consortium</div>
+          <div style="font-weight: 800; font-size: 17px; margin-bottom: 6px;">"Quantum Education"</div>
+          <p style="font-size: 16.5px; color: #475569; line-height: 1.4;">Fostering university research culture, grad school applications, and startups.</p>
+        </div>
+
+        <div class="neo-box" style="padding: 26px 22px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 900;">Mr. Ini Ukut</div>
+          <div style="font-size: 16px; font-weight: 800; color: var(--color-gdg-blue); margin: 4px 0;">Head, QNigeria</div>
+          <div style="font-weight: 800; font-size: 17px; margin-bottom: 6px;">"Career Paths"</div>
+          <p style="font-size: 16.5px; color: #475569; line-height: 1.4;">Navigating emerging opportunities across algorithm development and advocacy.</p>
+        </div>
+
+        <div class="neo-box" style="padding: 26px 22px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 900;">Dr. Fadodun</div>
+          <div style="font-size: 16px; font-weight: 800; color: var(--color-gdg-red); margin: 4px 0;">Dept of Physics, OAU</div>
+          <div style="font-weight: 800; font-size: 17px; margin-bottom: 6px;">"Physics & Math"</div>
+          <p style="font-size: 16.5px; color: #475569; line-height: 1.4;">Explaining mathematical foundations and quantum mechanics to launch sessions.</p>
+        </div>
+      </div>
+
+      <div style="background: #F1F5F9; border: var(--border-thick); border-radius: 20px; padding: 20px 30px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 20px; font-weight: 700; color: #334155;">✦ Supported by Challenge Architects Ovie Ohwoka & Adesina Lekan for Saturday's coding competition.</span>
+        <span style="font-family: 'DM Mono', monospace; font-weight: 800; font-size: 19px; color: var(--color-gdg-blue);">Academic Rigor</span>
+      </div>
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">6</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- ==================== SLIDE 7: SECONDARY SCHOOL OUTREACH ==================== -->
+  <div class="slide" id="slide-7" data-page="7">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#NextGenOutreach</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill yellow">Grassroots Outreach</div>
+        <h2 class="slide-h2">Secondary School Quantum Lab</h2>
+        <p class="deck-lead">
+          Igniting ambition early: hosting 40 selected high school prodigies from 5 schools in Ile-Ife for an intensive hands-on lab.
+        </p>
+      </div>
+      <div class="grid-2" style="gap: 32px;">
+        <div class="neo-box" style="padding: 44px 38px;">
+          <div style="font-size: 54px; margin-bottom: 14px;">🏫</div>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 900; margin-bottom: 10px;">40 Students · 5 Schools</h3>
+          <p style="font-size: 22px; color: #475569; line-height: 1.6;">Inviting 40 top science students and STEM teachers from across 5 secondary schools in Ile-Ife.</p>
+        </div>
+        <div class="neo-box" style="padding: 44px 38px;">
+          <div style="font-size: 54px; margin-bottom: 14px;">💻</div>
+          <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 900; margin-bottom: 10px;">10 Dedicated Laptops</h3>
+          <p style="font-size: 22px; color: #475569; line-height: 1.6;">Provided on-site so students write and run real Qiskit code directly rather than passively listening.</p>
+        </div>
+      </div>
+      <div class="neo-box" style="background: #FAF3DE; border: 4px solid #111; padding: 42px 46px;">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 900; margin-bottom: 12px;">The Core Milestone: Building a Bell State in Qiskit</div>
+        <p style="font-size: 22px; color: #1E293B; line-height: 1.6; margin-bottom: 22px;">
+          By the end of the lab, every high school student will have personally created, entangled, and measured their own quantum Bell state:
+        </p>
+        <div style="font-family: 'DM Mono', monospace; font-size: 32px; font-weight: 800; background: #FFFFFF; border: 3.5px solid #111; border-radius: 18px; padding: 20px 42px; text-align: center; display: inline-block;">
+          |&Phi;+&gt; = (|00&gt; + |11&gt;) / &radic;2
+        </div>
+      </div>
+      <div style="background: #F8FAFC; border: var(--border-thick); border-radius: 20px; padding: 22px 34px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 21px; font-weight: 700; color: #334155;">✦ Providing youth with early access to emerging technologies that redefine their career vision.</span>
+        <span style="font-family: 'DM Mono', monospace; font-weight: 800; font-size: 20px; color: var(--color-gdg-green);">Youth STEM</span>
+      </div>
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">7</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- ==================== SLIDE 8: TRANSPARENT BUDGET ==================== -->
+  <div class="slide" id="slide-8" data-page="8">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#Budget</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill blue">Transparent Event Budget</div>
+        <h2 class="slide-h2">100% Direct Student Benefit</h2>
+        <p class="deck-lead">
+          Every single Naira is deployed directly to attendee hospitality, venue infrastructure, and student merit cash awards.
+        </p>
+      </div>
+      <table class="neo-table" style="flex: 1;">
+        <thead>
+          <tr>
+            <th>Line Item & Operational Scope</th>
+            <th style="text-align: right;">Amount (NGN)</th>
+            <th style="text-align: right;">Est. USD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Refreshments (Both Days)</b><br><span style="font-size: 18px; color: #64748B;">Hospitality for university and secondary school attendees</span></td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; font-weight: 800; font-size: 24px;">₦220,000</td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; color: #64748B; font-size: 21px;">$150</td>
+          </tr>
+          <tr>
+            <td><b>Venue Hire (Opolo Innovation Hub)</b><br><span style="font-size: 18px; color: #64748B;">Dedicated 2-day hall reservation, air conditioning, continuous power</span></td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; font-weight: 800; font-size: 24px;">₦130,000</td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; color: #64748B; font-size: 21px;">$88</td>
+          </tr>
+          <tr>
+            <td><b>Code Jam Merit Cash Prize Pool</b><br><span style="font-size: 18px; color: #64748B;">Merit cash awards presented to the Top 3 student problem solvers</span></td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; font-weight: 800; font-size: 24px; color: var(--color-gdg-green);">₦250,000</td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; color: #64748B; font-size: 21px;">$170</td>
+          </tr>
+          <tr>
+            <td><b>Prints & Event Publicity</b><br><span style="font-size: 18px; color: #64748B;">Main stage backdrop banner, directional signs & student participation certs</span></td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; font-weight: 800; font-size: 24px;">₦40,000</td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; color: #64748B; font-size: 21px;">$27</td>
+          </tr>
+          <tr>
+            <td><b>Dedicated High-Speed Internet</b><br><span style="font-size: 18px; color: #64748B;">Low-latency connection for cloud Qiskit simulations & global keynote stream</span></td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; font-weight: 800; font-size: 24px;">₦15,000</td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; color: #64748B; font-size: 21px;">$10</td>
+          </tr>
+          <tr>
+            <td><b>Miscellanies & Contingency</b><br><span style="font-size: 18px; color: #64748B;">Power adapters, cabling, logistics & emergency reserves</span></td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; font-weight: 800; font-size: 24px;">₦50,000</td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; color: #64748B; font-size: 21px;">$34</td>
+          </tr>
+          <tr class="total-row">
+            <td><b>GRAND TOTAL FESTIVAL BUDGET</b></td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; font-size: 28px; color: var(--color-qiskit);">₦705,000</td>
+            <td style="text-align: right; font-family: 'DM Mono', monospace; font-size: 28px; color: var(--color-qiskit);">~$480 USD</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="background: #F1F5F9; border: 3px solid #111; border-radius: 20px; padding: 20px 30px; font-size: 20px; color: #334155; font-weight: 700;">
+        ✦ <b>Complete Financial Stewardship:</b> 100% of sponsorship is directly allocated to student hospitality, venue, and merit cash awards.
+      </div>
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">8</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- ==================== SLIDE 9: PATRON CONTRIBUTION TIERS ==================== -->
+  <div class="slide" id="slide-9" data-page="9">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#Tiers</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill pink">Patron Contribution Tiers</div>
+        <h2 class="slide-h2">3 Clear Partnership Tiers</h2>
+        <p class="deck-lead">
+          Choose a tier that aligns with your philanthropic vision to underwrite this historic gathering.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-around; flex: 1; padding: 12px 0; gap: 24px;">
+        
+        <!-- TIER 1 -->
+        <div class="tier-row" style="background: #FEFCE8; border-color: #111; padding: 32px 38px;">
+          <div style="flex: 1;">
+            <div class="tier-badge" style="background: var(--color-gdg-yellow);">TITLE PATRON</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 900; margin: 2px 0 8px 0;">
+              🌟 Grand Festival Patron
+            </h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <span class="tier-pill" style="background: #FEF08A;">✔ Underwrites 100% of Festival</span>
+              <span class="tier-pill">✔ Headline Logo on Stage Backdrop (Both Days)</span>
+              <span class="tier-pill">✔ "Supported by" on All Flyers & Website</span>
+              <span class="tier-pill">✔ Dedicated Social Media Spotlight</span>
+            </div>
+          </div>
+          <div style="text-align: right; min-width: 280px;">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 900; color: var(--color-qiskit);">
+              ₦705,000
+            </div>
+            <div style="font-size: 19px; font-weight: 700; color: #64748B;">~$480 USD · Full Event Underwriter</div>
+          </div>
+        </div>
+
+        <!-- TIER 2 -->
+        <div class="tier-row" style="background: #F0F9FF; border-color: #111; padding: 32px 38px;">
+          <div style="flex: 1;">
+            <div class="tier-badge" style="background: #70CFFF;">VENUE & HOSPITALITY</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 900; margin: 2px 0 8px 0;">
+              🚀 Quantum Pioneer Patron
+            </h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <span class="tier-pill" style="background: #BAE6FD;">✔ Underwrites Venue & Refreshments</span>
+              <span class="tier-pill">✔ Prominent Logo on Stage Backdrop</span>
+              <span class="tier-pill">✔ Featured Logo on Digital Flyers</span>
+              <span class="tier-pill">✔ Verbal Stage Recognition</span>
+            </div>
+          </div>
+          <div style="text-align: right; min-width: 280px;">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 900; color: var(--color-gdg-blue);">
+              ₦350,000
+            </div>
+            <div style="font-size: 19px; font-weight: 700; color: #64748B;">~$240 USD · Venue & Hospitality Partner</div>
+          </div>
+        </div>
+
+        <!-- TIER 3 -->
+        <div class="tier-row" style="background: #F0FDF4; border-color: #111; padding: 32px 38px;">
+          <div style="flex: 1;">
+            <div class="tier-badge" style="background: var(--color-mint);">STUDENT MERIT AWARDS</div>
+            <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 900; margin: 2px 0 8px 0;">
+              🌱 Next-Gen Talent Patron
+            </h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <span class="tier-pill" style="background: #BBF7D0;">✔ Underwrites ₦250,000 Prize Pool</span>
+              <span class="tier-pill">✔ Acknowledgment on Official Website</span>
+              <span class="tier-pill">✔ Name on Event Flyer Footer</span>
+              <span class="tier-pill">✔ Code Jam Award Presenter</span>
+            </div>
+          </div>
+          <div style="text-align: right; min-width: 280px;">
+            <div style="font-family: 'Space Grotesk', sans-serif; font-size: 46px; font-weight: 900; color: var(--color-gdg-green);">
+              ₦250,000
+            </div>
+            <div style="font-size: 19px; font-weight: 700; color: #64748B;">~$170 USD · 100% Student Prize Sponsor</div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">9</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+  <!-- ==================== SLIDE 10: TEAM & OFFICIAL BANKING DETAILS ==================== -->
+  <div class="slide" id="slide-10" data-page="10">
+    
+        <div class="slide-header">
+          <div class="slide-brand">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            <div class="slide-brand-title">
+              Qiskit Fall Fest <span class="pill-year">2026</span>
+            </div>
+          </div>
+          <div class="slide-hashtag">#PaymentDetails</div>
+        </div>
+        
+    <div class="white-board">
+      <div>
+        <div class="section-pill green">Support & Leadership</div>
+        <h2 class="slide-h2">Organizing Team & Official Bank Details</h2>
+        <p class="deck-lead">
+          Direct your contribution via domestic Nigerian bank transfer or international USD wire/ACH.
+        </p>
+      </div>
+
+      <!-- Committee Leads in 4 clean cards -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;">
+        <div class="neo-box" style="padding: 24px 20px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 900;">Adesina Lekan</div>
+          <div style="font-size: 17px; font-weight: 800; color: var(--color-qiskit); margin-top: 4px;">Lead Organiser</div>
+          <div style="font-size: 15px; color: #64748B; margin-top: 2px;">QFF OAU 2026</div>
+        </div>
+        <div class="neo-box" style="padding: 24px 20px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 900;">Temitope Akinsunmade</div>
+          <div style="font-size: 17px; font-weight: 800; color: var(--color-gdg-blue); margin-top: 4px;">Lead, GDG OAU</div>
+          <div style="font-size: 15px; color: #64748B; margin-top: 2px;">Financial Stewardship</div>
+        </div>
+        <div class="neo-box" style="padding: 24px 20px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 900;">Oreoluwa Adigun</div>
+          <div style="font-size: 17px; font-weight: 800; color: var(--color-gdg-green); margin-top: 4px;">Quantum Lead</div>
+          <div style="font-size: 15px; color: #64748B; margin-top: 2px;">GDG on Campus OAU</div>
+        </div>
+        <div class="neo-box" style="padding: 24px 20px;">
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 900;">Dr. Fadodun</div>
+          <div style="font-size: 17px; font-weight: 800; color: var(--color-gdg-red); margin-top: 4px;">Faculty Advisor</div>
+          <div style="font-size: 15px; color: #64748B; margin-top: 2px;">Dept of Physics, OAU</div>
+        </div>
+      </div>
+
+      <!-- Bank Details in 2 large, spacious cards -->
+      <div class="grid-2" style="gap: 28px; flex: 1; align-content: center;">
+        <div class="neo-box" style="background: #FFFFFF; border: 4px solid #111; padding: 42px 38px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 10px; background: #E8F5E9; border: 2.5px solid #2E7D32; border-radius: 9999px; padding: 6px 20px; margin-bottom: 20px;">
+              <span style="font-weight: 900; font-size: 20px; color: #2E7D32;">₦ DOMESTIC NAIRA (NGN)</span>
+            </div>
+            <div style="font-size: 18px; color: #64748B; margin-bottom: 4px;">Bank Name</div>
+            <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 28px; margin-bottom: 20px;">Moniepoint Microfinance Bank</div>
+            <div style="font-size: 18px; color: #64748B; margin-bottom: 4px;">Account Number</div>
+            <div style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 46px; color: var(--color-gdg-blue); margin-bottom: 20px; letter-spacing: 2px;">6542241733</div>
+            <div style="font-size: 18px; color: #64748B; margin-bottom: 4px;">Account Name</div>
+            <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 28px;">Temitope Akinsunmade</div>
+            <div style="font-size: 18px; color: #64748B; margin-top: 4px;">(Lead, GDG on Campus OAU)</div>
+          </div>
+          <div style="background: #F1F5F9; border: 2px solid #111; border-radius: 12px; padding: 12px 18px; font-size: 17px; font-weight: 700; color: #334155;">
+            Instant confirmation issued upon transfer notification.
+          </div>
+        </div>
+
+        <div class="neo-box" style="background: #FFFFFF; border: 4px solid #111; padding: 42px 38px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 10px; background: #E3F2FD; border: 2.5px solid #1565C0; border-radius: 9999px; padding: 6px 20px; margin-bottom: 20px;">
+              <span style="font-weight: 900; font-size: 20px; color: #1565C0;">$ DOLLAR WIRE / ACH (USD)</span>
+            </div>
+            <div style="font-size: 18px; color: #64748B; margin-bottom: 4px;">Bank Name</div>
+            <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 28px; margin-bottom: 18px;">Lead Bank</div>
+            <div style="font-size: 18px; color: #64748B; margin-bottom: 4px;">Account Number</div>
+            <div style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 38px; color: var(--color-gdg-green); margin-bottom: 18px; letter-spacing: 1px;">215218316781</div>
+            <div style="font-size: 18px; color: #64748B; margin-bottom: 4px;">Routing Number</div>
+            <div style="font-family: 'DM Mono', monospace; font-weight: 800; font-size: 28px; margin-bottom: 18px;">1010196444</div>
+            <div style="font-size: 18px; color: #64748B; margin-bottom: 4px;">Account Name</div>
+            <div style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 26px;">Temitope Akinsunmade</div>
+            <div style="font-size: 16px; color: #64748B; margin-top: 4px;">9450 SW Gemini Dr, Beaverton, OR, 97008, USA</div>
+          </div>
+          <div style="background: #F1F5F9; border: 2px solid #111; border-radius: 12px; padding: 12px 18px; font-size: 17px; font-weight: 700; color: #334155;">
+            International wires welcomed worldwide.
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #FAF3DE; border: var(--border-thick); border-radius: 22px; padding: 20px 36px; display: flex; justify-content: space-between; align-items: center; box-shadow: 4px 4px 0px #111;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="background: #111; color: #fff; border-radius: 9999px; padding: 5px 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.05em;">WHATSAPP</span>
+          <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px; color: var(--color-gdg-blue); white-space: nowrap;">+234 705 317 1777</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span style="background: #111; color: #fff; border-radius: 9999px; padding: 5px 16px; font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.05em;">CONNECT</span>
+          <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 20px; color: #334155; white-space: nowrap;">info@gdgoau.com &nbsp;&bull;&nbsp; @gdgoau</span>
+        </div>
+      </div>
+    </div>
+    
+        <div class="slide-footer">
+          <div class="footer-subtext">
+            Google Developer Groups<br>
+            <b>OAU · Obafemi Awolowo University</b>
+          </div>
+          <div class="footer-tab-bar">
+            <div class="footer-circle-num">10</div>
+            <div class="footer-year">2026</div>
+            <div class="footer-icons">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span style="font-family: 'DM Mono', monospace; font-weight: 900; font-size: 24px;">&mdash;&gt;</span>
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="4" width="18" height="18" rx="5" fill="#4285F4" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="4" width="18" height="18" rx="5" fill="#EA4335" stroke="#111" stroke-width="2.5"/>
+      <rect x="4" y="26" width="18" height="18" rx="5" fill="#FBBC04" stroke="#111" stroke-width="2.5"/>
+      <rect x="26" y="26" width="18" height="18" rx="5" fill="#34A853" stroke="#111" stroke-width="2.5"/>
+    </svg>
+            </div>
+          </div>
+        </div>
+        
+  </div>
+
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 10;
+  let isPresentationMode = false;
+
+  function updateSlideCounter() {
+    const el = document.getElementById('slideCounter');
+    if (el) el.textContent = `Slide ${currentSlide} / ${totalSlides}`;
+  }
+
+  function goToSlide(n) {
+    if (n < 1) n = 1;
+    if (n > totalSlides) n = totalSlides;
+    currentSlide = n;
+    updateSlideCounter();
+
+    if (isPresentationMode) {
+      for (let i = 1; i <= totalSlides; i++) {
+        const s = document.getElementById(`slide-${i}`);
+        if (s) s.style.display = (i === currentSlide) ? 'flex' : 'none';
+      }
+      window.scrollTo(0, 0);
+    } else {
+      const target = document.getElementById(`slide-${currentSlide}`);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
+  function nextSlide() { goToSlide(currentSlide + 1); }
+  function prevSlide() { goToSlide(currentSlide - 1); }
+
+  function togglePresentation() {
+    isPresentationMode = !isPresentationMode;
+    const nav = document.getElementById('deckNav');
+    const btn = nav.querySelector('.primary-btn');
+
+    if (isPresentationMode) {
+      btn.textContent = '⮌ Scroll View';
+      document.body.style.backgroundColor = '#111111';
+      for (let i = 1; i <= totalSlides; i++) {
+        const s = document.getElementById(`slide-${i}`);
+        if (s) s.style.display = (i === currentSlide) ? 'flex' : 'none';
+      }
+      window.scrollTo(0, 0);
+    } else {
+      btn.textContent = '◻ Presentation Mode';
+      document.body.style.backgroundColor = '#E2DAC5';
+      for (let i = 1; i <= totalSlides; i++) {
+        const s = document.getElementById(`slide-${i}`);
+        if (s) s.style.display = 'flex';
+      }
+      const target = document.getElementById(`slide-${currentSlide}`);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault();
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      prevSlide();
+    } else if (e.key === 'f' || e.key === 'F') {
+      togglePresentation();
+    }
+  });
+</script>
+</body>
+</html>

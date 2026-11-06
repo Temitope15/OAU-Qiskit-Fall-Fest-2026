@@ -20,19 +20,23 @@ export const Route = createFileRoute("/")({
 });
 
 const schoolFlow = [
-  "Opening and welcome",
-  "Introduction to quantum computing",
-  "Career paths in quantum computing",
-  "Hands-on Qiskit: build your own Bell state",
-  "Certificates and closing",
+  "Welcome & opening remarks",
+  "Keynote session from an IBM Employee",
+  "Hands-on lab session: building a Bell state in Qiskit",
+  "Refreshment & networking break",
+  "Physics & math rudiments",
+  "Quantum career pathways",
+  "Wrap-up & Day 1 certificates of participation",
 ];
+
 const universityFlow = [
-  "Opening and keynote session",
+  "Global keynote: Pushing beyond the limits",
   "Quantum education & capacity building",
-  "Rudiments of quantum computing",
-  "Getting started in quantum computing",
-  "Code jams and challenges",
-  "Prizes, certificates, and closing",
+  "Advanced quantum SDK session",
+  "Refreshment & networking break",
+  "Live quantum coding challenges",
+  "Benchmark judging & review",
+  "Awards ceremony & finale",
 ];
 
 const pillars = [
@@ -46,14 +50,14 @@ const pillars = [
   {
     num: "02",
     title: "Secondary School Outreach",
-    desc: "Enlightening the next generation about emerging tech like quantum computing. A hands-on introduction to Qiskit where every student builds their own Bell state.",
+    desc: "Inviting 40 secondary students across 5 local schools in Ile-Ife for an intensive hands-on lab session with dedicated laptops.",
     color: "bg-[#FBBC04]",
     img: "/programme/outreach.jpg",
   },
   {
     num: "03",
     title: "Code Jams & Challenges",
-    desc: "Saturday's live coding challenges put university participants' new skills to the test, with exciting prizes to be won.",
+    desc: "Intensive live algorithmic sprints awarding cash prizes to top student problem solvers.",
     color: "bg-[#34A853]",
     img: "/programme/challenges.jpg",
   },
@@ -211,7 +215,8 @@ function Index() {
                 <span className="text-7xl font-black text-gray-200">02</span>
                 <div className="w-16 h-16 bg-[#4285F4] border-[4px] border-black rounded-full flex items-center justify-center text-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"><Laptop className="w-8 h-8"/></div>
               </div>
-              <p className="text-[#4285F4] font-black uppercase tracking-widest mb-4">University students</p>
+              <p className="text-[#4285F4] font-black uppercase tracking-widest mb-1">Undergraduates & advanced students</p>
+              <p className="text-xs font-bold text-gray-500 mb-6 uppercase tracking-wider">From OAU Campus and beyond</p>
               <h2 className="text-4xl font-black mb-10">Saturday, 28 November</h2>
               <div className="flex flex-wrap gap-4 mb-12">
                 <span className="bg-[#f1f3f4] border-2 border-black px-4 py-2 rounded-lg font-bold flex items-center gap-2"><MapPin className="w-5 h-5"/> {venue}</span>
@@ -240,7 +245,7 @@ function Index() {
               <img src="/programme/students-group.jpg" alt="Secondary school students invited to the Fall Fest, smiling together" className="rounded-[1.4rem] border-[3px] border-black w-full object-cover aspect-[4/5]" />
             </div>
             <span className="absolute -top-4 -left-3 bg-[#FBBC04] text-black px-4 py-2 rounded-lg border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-xs transform rotate-3">Schools invited</span>
-            <span className="absolute -bottom-5 -right-3 bg-[#34A853] text-white px-5 py-3 rounded-xl border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black text-lg transform -rotate-2">4 schools · 40 students</span>
+            <span className="absolute -bottom-5 -right-3 bg-[#34A853] text-white px-5 py-3 rounded-xl border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black text-lg transform -rotate-2">5 schools · 40 students</span>
           </div>
           <div className="bg-white p-8 md:p-12 border-[6px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-[2.5rem]">
             <p className="text-sm font-black text-[#EA4335] uppercase tracking-widest mb-6">Access is designed into the room</p>
@@ -253,7 +258,7 @@ function Index() {
               ))}
             </div>
             <p className="mt-6 font-bold text-gray-700 leading-relaxed">
-              Ten students from each of four schools in Ife: a deliberate mix of public, private, mixed, and all-female institutions. With at least 10 laptops on site, every student gets hands-on time with Qiskit. Final school list to be confirmed.
+              Inviting 40 top science students and STEM teachers from across 5 secondary schools in Ile-Ife. With 10 dedicated laptops on site, every student writes and runs real Qiskit code directly rather than passively listening.
             </p>
           </div>
         </div>
@@ -274,7 +279,7 @@ function Index() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { num: "04", title: "Schools invited", desc: "Ten students from each of four schools in Ile-Ife, a deliberate mix of institutions." },
+              { num: "05", title: "Schools invited", desc: "Inviting 40 secondary students across 5 local schools in Ile-Ife." },
               { num: "02", title: "Learning pathways", desc: "Age-appropriate experiences for secondary school and university students." },
               { num: "01", title: "Shared ambition", desc: "Developing quantum awareness, technical confidence, and a research culture in Nigeria." }
             ].map((block) => (
