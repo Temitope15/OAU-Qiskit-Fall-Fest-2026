@@ -1,17 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, CalendarDays, Laptop, MapPin, PartyPopper, Users } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Award, CalendarDays, Laptop, MapPin, PartyPopper, Users } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { TeamSection } from "@/components/team-section";
-import { eventYears, registerUrl, schools2026 } from "@/lib/events";
+import { eventYears, registerUrl, schools2026, venue } from "@/lib/events";
 import heroArt from "@/assets/qiskit-fall-fest-2026-hero.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Qiskit Fall Fest OAU 2026 | Quantum for Young Nigerian Minds" },
-      { name: "description", content: "The November 2026 Qiskit Fall Fest Plus at OAU: a hackathon, a secondary school outreach day, problem-solving challenges, and expert keynotes for secondary and university students." },
+      { name: "description", content: "Qiskit Fall Fest OAU 2026 at Opolo Hub, Ile-Ife: a secondary school outreach day, expert keynotes, technical sessions, and code jams with exciting prizes for secondary and university students." },
       { property: "og:title", content: "Qiskit Fall Fest OAU 2026" },
-      { property: "og:description", content: "A hackathon, secondary school outreach, problem-solving challenges, and expert keynotes for young Nigerian minds." },
+      { property: "og:description", content: "Secondary school outreach, expert keynotes, technical sessions, and code jams for young Nigerian minds." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ]
@@ -19,37 +19,50 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const schoolFlow = ["Opening and welcome", "Introductory session", "Break, games, and guest talk", "Hands-on quantum activity", "Closing ceremony"];
-const universityFlow = ["Opening and keynote session", "Panel session", "Workshops and challenges with prizes", "Hackathon awards", "Closing ceremony"];
+const schoolFlow = [
+  "Opening and welcome",
+  "Introduction to quantum computing",
+  "Career paths in quantum computing",
+  "Hands-on Qiskit: build your own Bell state",
+  "Certificates and closing",
+];
+const universityFlow = [
+  "Opening and keynote session",
+  "Quantum education & capacity building",
+  "Rudiments of quantum computing",
+  "Getting started in quantum computing",
+  "Code jams and challenges",
+  "Prizes, certificates, and closing",
+];
 
 const pillars = [
   {
     num: "01",
-    title: "Hackathon",
-    desc: "An intensive period of focused building. Participants form teams, select an industry bottleneck, and develop practical quantum or hybrid solutions.",
-    color: "bg-[#4285F4]",
-    img: "/programme/hackathon.jpg",
+    title: "Keynotes",
+    desc: "Expert insights from leaders in quantum computing — exposing our minds to the areas and use cases where young Nigerians can stand out and contribute to quantum innovation.",
+    color: "bg-[#EA4335]",
+    img: "/programme/keynote.jpg",
   },
   {
     num: "02",
     title: "Secondary School Outreach",
-    desc: "Introducing quantum computing to the next generation. We bring students from diverse schools together to make the concepts visible, accessible, and exciting.",
+    desc: "Enlightening the next generation about emerging tech like quantum computing. A hands-on introduction to Qiskit where every student builds their own Bell state.",
     color: "bg-[#FBBC04]",
     img: "/programme/outreach.jpg",
   },
   {
     num: "03",
-    title: "Challenges & Problem Solving",
-    desc: "Live, hands-on sessions where university participants tackle specific computational challenges to win prizes and test their skills.",
+    title: "Code Jams & Challenges",
+    desc: "Saturday's live coding challenges put university participants' new skills to the test, with exciting prizes to be won.",
     color: "bg-[#34A853]",
     img: "/programme/challenges.jpg",
   },
   {
     num: "04",
-    title: "Keynotes",
-    desc: "Expert insights from global leaders in quantum computing — the latest advancements, and what they could mean in practice for Nigeria.",
-    color: "bg-[#EA4335]",
-    img: "/programme/keynote.jpg",
+    title: "Expert & Technical Sessions",
+    desc: "Sessions on quantum education and capacity building, career paths, and the physics and mathematics behind quantum computing.",
+    color: "bg-[#4285F4]",
+    img: "/programme/hackathon.jpg",
   },
 ];
 
@@ -91,9 +104,9 @@ function RegistrationBoom() {
           </div>
           <h2 className="text-4xl md:text-6xl font-black leading-tight tracking-tight">One form for all participants.</h2>
         </div>
-        <a href={registerUrl} target="_blank" rel="noreferrer" className="boom-cta shrink-0 bg-black text-white px-10 py-6 rounded-2xl border-[4px] border-black shadow-[8px_8px_0px_0px_#4285F4] font-black text-2xl hover:-translate-y-2 transition-transform inline-flex items-center gap-3">
+        <Link to={registerUrl} className="boom-cta shrink-0 bg-black text-white px-10 py-6 rounded-2xl border-[4px] border-black shadow-[8px_8px_0px_0px_#4285F4] font-black text-2xl hover:-translate-y-2 transition-transform inline-flex items-center gap-3">
           Register now <ArrowUpRight className="w-8 h-8" />
-        </a>
+        </Link>
       </div>
     </section>
   );
@@ -113,7 +126,7 @@ function Index() {
                 <CalendarDays className="w-4 h-4" /> 27–28 November 2026
               </span>
               <span className="bg-white text-black px-4 py-2 rounded-lg border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-xs md:text-sm inline-flex items-center gap-2 transform rotate-1">
-                <MapPin className="w-4 h-4" /> OAU · Ile-Ife
+                <MapPin className="w-4 h-4" /> {venue} · Ile-Ife
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] mb-8 text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)]">
@@ -121,15 +134,15 @@ function Index() {
               <span className="text-[#FBBC04]">young Nigerian minds.</span>
             </h1>
             <p className="text-xl md:text-2xl font-bold leading-relaxed max-w-2xl bg-black p-6 rounded-2xl border-[4px] border-[#FBBC04] shadow-[6px_6px_0px_0px_#FBBC04]">
-              A secondary school outreach day, a focused hackathon, and intensive problem-solving challenges, crowned by expert keynote sessions.
+              A secondary school outreach day and a university day of expert keynotes, technical sessions, and code jams with exciting prizes to be won.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href={registerUrl} target="_blank" rel="noreferrer" className="bg-white text-black px-8 py-4 rounded-xl border-[4px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] font-black text-xl hover:-translate-y-1 transition-transform inline-flex items-center gap-2">
+              <Link to={registerUrl} className="bg-white text-black px-8 py-4 rounded-xl border-[4px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] font-black text-xl hover:-translate-y-1 transition-transform inline-flex items-center gap-2">
                 Register now <ArrowUpRight className="w-6 h-6" />
-              </a>
-              <Link to="/hackathon" className="bg-black text-white px-8 py-4 rounded-xl border-[4px] border-white shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] font-black text-xl hover:-translate-y-1 transition-transform inline-flex items-center gap-2">
-                Explore the hackathon <ArrowRight className="w-6 h-6" />
               </Link>
+              <a href="#programme" className="bg-black text-white px-8 py-4 rounded-xl border-[4px] border-white shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] font-black text-xl hover:-translate-y-1 transition-transform inline-flex items-center gap-2">
+                Explore the programme <ArrowRight className="w-6 h-6" />
+              </a>
             </div>
           </div>
           <div className="relative mt-8 md:mt-0">
@@ -141,7 +154,7 @@ function Index() {
       </section>
 
       {/* Programme Pillars */}
-      <section className="w-full min-h-[90vh] flex flex-col justify-center py-24 bg-white border-b-4 border-black">
+      <section id="programme" className="w-full min-h-[90vh] flex flex-col justify-center py-24 bg-white border-b-4 border-black scroll-mt-20">
         <div className="site-container">
           <p className="text-sm font-black uppercase tracking-widest text-[#EA4335] mb-6">The Programme Structure</p>
           <h2 className="text-5xl md:text-6xl font-black leading-tight tracking-tight mb-16 max-w-4xl">
@@ -179,8 +192,9 @@ function Index() {
               <p className="text-[#34A853] font-black uppercase tracking-widest mb-4">Secondary students</p>
               <h2 className="text-4xl font-black mb-10">Friday, 27 November</h2>
               <div className="flex flex-wrap gap-4 mb-12">
-                <span className="bg-black border-2 border-white px-4 py-2 rounded-lg font-bold flex items-center gap-2"><MapPin className="w-5 h-5"/> Onsite</span>
+                <span className="bg-black border-2 border-white px-4 py-2 rounded-lg font-bold flex items-center gap-2"><MapPin className="w-5 h-5"/> {venue}</span>
                 <span className="bg-black border-2 border-white px-4 py-2 rounded-lg font-bold flex items-center gap-2"><CalendarDays className="w-5 h-5"/> 10 AM–2 PM</span>
+                <span className="bg-black border-2 border-white px-4 py-2 rounded-lg font-bold flex items-center gap-2"><Award className="w-5 h-5"/> Certificate of participation</span>
               </div>
               <ol className="space-y-6">
                 {schoolFlow.map((x, i) => (
@@ -200,8 +214,9 @@ function Index() {
               <p className="text-[#4285F4] font-black uppercase tracking-widest mb-4">University students</p>
               <h2 className="text-4xl font-black mb-10">Saturday, 28 November</h2>
               <div className="flex flex-wrap gap-4 mb-12">
-                <span className="bg-[#f1f3f4] border-2 border-black px-4 py-2 rounded-lg font-bold flex items-center gap-2"><MapPin className="w-5 h-5"/> Onsite</span>
+                <span className="bg-[#f1f3f4] border-2 border-black px-4 py-2 rounded-lg font-bold flex items-center gap-2"><MapPin className="w-5 h-5"/> {venue}</span>
                 <span className="bg-[#f1f3f4] border-2 border-black px-4 py-2 rounded-lg font-bold flex items-center gap-2"><CalendarDays className="w-5 h-5"/> 10 AM–4 PM</span>
+                <span className="bg-[#f1f3f4] border-2 border-black px-4 py-2 rounded-lg font-bold flex items-center gap-2"><Award className="w-5 h-5"/> Certificate of participation</span>
               </div>
               <ol className="space-y-6">
                 {universityFlow.map((x, i) => (
@@ -225,7 +240,7 @@ function Index() {
               <img src="/programme/students-group.jpg" alt="Secondary school students invited to the Fall Fest, smiling together" className="rounded-[1.4rem] border-[3px] border-black w-full object-cover aspect-[4/5]" />
             </div>
             <span className="absolute -top-4 -left-3 bg-[#FBBC04] text-black px-4 py-2 rounded-lg border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] font-black uppercase tracking-widest text-xs transform rotate-3">Schools invited</span>
-            <span className="absolute -bottom-5 -right-3 bg-[#34A853] text-white px-5 py-3 rounded-xl border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black text-lg transform -rotate-2">5 schools · 100 students</span>
+            <span className="absolute -bottom-5 -right-3 bg-[#34A853] text-white px-5 py-3 rounded-xl border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black text-lg transform -rotate-2">4 schools · 40 students</span>
           </div>
           <div className="bg-white p-8 md:p-12 border-[6px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-[2.5rem]">
             <p className="text-sm font-black text-[#EA4335] uppercase tracking-widest mb-6">Access is designed into the room</p>
@@ -238,7 +253,7 @@ function Index() {
               ))}
             </div>
             <p className="mt-6 font-bold text-gray-700 leading-relaxed">
-              Twenty students and two teachers are invited from each school — a deliberate mix of public, private, mixed, and all-female institutions.
+              Ten students from each of four schools in Ife: a deliberate mix of public, private, mixed, and all-female institutions. With at least 10 laptops on site, every student gets hands-on time with Qiskit. Final school list to be confirmed.
             </p>
           </div>
         </div>
@@ -259,7 +274,7 @@ function Index() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { num: "05", title: "Schools invited", desc: "A deliberate mix of public, private, mixed, and all-female institutions in Ile-Ife." },
+              { num: "04", title: "Schools invited", desc: "Ten students from each of four schools in Ile-Ife, a deliberate mix of institutions." },
               { num: "02", title: "Learning pathways", desc: "Age-appropriate experiences for secondary school and university students." },
               { num: "01", title: "Shared ambition", desc: "Developing quantum awareness, technical confidence, and a research culture in Nigeria." }
             ].map((block) => (
@@ -312,12 +327,12 @@ function Index() {
       <section className="w-full py-32 bg-[#34A853] border-b-4 border-black text-black">
         <div className="site-container flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="max-w-3xl">
-            <p className="text-sm font-black uppercase tracking-widest text-black bg-white px-3 py-1 inline-block border-2 border-black rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] mb-6">For companies</p>
+            <p className="text-sm font-black uppercase tracking-widest text-black bg-white px-3 py-1 inline-block border-2 border-black rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] mb-6">Support the Fest</p>
             <h2 className="text-5xl md:text-7xl font-black leading-tight tracking-tight">
-              Help make first encounters with quantum computing count.
+              Invest in the next generation of quantum talent.
             </h2>
             <p className="mt-6 text-xl font-bold leading-relaxed max-w-xl">
-              Want to sponsor a track or partner with us? Send us a mail and we'll share the full proposal.
+              Want to support quantum education for young Nigerians? Send us a mail and we'll share how you can be part of it.
             </p>
           </div>
           <a href="mailto:info@gdgoau.com?subject=Sponsorship%20enquiry%20%E2%80%94%20Qiskit%20Fall%20Fest%20OAU" className="shrink-0 bg-black text-white px-10 py-6 rounded-2xl border-[4px] border-black shadow-[8px_8px_0px_0px_#FBBC04] font-black text-2xl hover:-translate-y-2 transition-transform inline-flex items-center gap-3 transform rotate-2">

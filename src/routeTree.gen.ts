@@ -16,6 +16,7 @@ import { Route as R2026RouteImport } from './routes/2026'
 import { Route as HackathonRouteImport } from './routes/hackathon'
 import { Route as PartnershipRouteImport } from './routes/partnership'
 import { Route as RegisterRouteImport } from './routes/register'
+import { Route as SponsorRouteImport } from './routes/sponsor'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const RegisterRoute = RegisterRouteImport.update({
   path: '/register',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SponsorRoute = SponsorRouteImport.update({
+  id: '/sponsor',
+  path: '/sponsor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
   '/register': typeof RegisterRoute
+  '/sponsor': typeof SponsorRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
   '/register': typeof RegisterRoute
+  '/sponsor': typeof SponsorRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/hackathon': typeof HackathonRoute
   '/partnership': typeof PartnershipRoute
   '/register': typeof RegisterRoute
+  '/sponsor': typeof SponsorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/hackathon'
     | '/partnership'
     | '/register'
+    | '/sponsor'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/hackathon'
     | '/partnership'
     | '/register'
+    | '/sponsor'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/hackathon'
     | '/partnership'
     | '/register'
+    | '/sponsor'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   HackathonRoute: typeof HackathonRoute
   PartnershipRoute: typeof PartnershipRoute
   RegisterRoute: typeof RegisterRoute
+  SponsorRoute: typeof SponsorRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sponsor': {
+      id: '/sponsor'
+      path: '/sponsor'
+      fullPath: '/sponsor'
+      preLoaderRoute: typeof SponsorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   HackathonRoute: HackathonRoute,
   PartnershipRoute: PartnershipRoute,
   RegisterRoute: RegisterRoute,
+  SponsorRoute: SponsorRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

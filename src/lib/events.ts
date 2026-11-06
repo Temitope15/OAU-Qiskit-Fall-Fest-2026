@@ -25,7 +25,7 @@ export const eventYears: EventYear[] = [
     year: "2026",
     status: "Upcoming",
     title: "Young Nigerian minds",
-    summary: "A focused hackathon, secondary school outreach, and problem-solving challenges.",
+    summary: "Secondary school outreach, expert keynotes, technical sessions, and code jams at Opolo Hub.",
     href: "/",
   },
 ];
@@ -39,6 +39,8 @@ export const programme2024 = [
   ["23 Nov", "Final event", "Community talks, celebration, and the closing gathering."],
 ] as const;
 
+/** Schools being reached for the 2026 outreach. Final list (four schools,
+ *  ten students each) is still being confirmed. */
 export const schools2026 = [
   "Fadehan College",
   "Moremi High School",
@@ -46,31 +48,78 @@ export const schools2026 = [
   "Oduduwa College",
   "Ife Girls High School",
 ];
+
+/** Venue for both event days. */
+export const venue = "Opolo Hub";
+
 /** Registration form for both secondary school and university participants.
  *  Replace with the Google Form link once it is ready. */
 export const registerUrl = "/register";
 
-export const hackathonTracks = [
-  {
-    name: "Quantum Algorithms",
-    detail: "For computing and quantitative finance students, working towards defined performance benchmarks.",
-  },
-  {
-    name: "Quantum Optimization",
-    detail: "Energy problems and Hamiltonian formulations, measured against a benchmark limit.",
-  },
-  {
-    name: "Quantum Machine Learning",
-    detail: "Models that combine quantum algorithms with machine learning to solve problems in any field.",
-  },
-] as const;
+/** `photo` points at a file in `public/speakers/` (or `public/team/`). Until
+ *  the image exists the card falls back to an initials monogram. */
+export type Speaker = {
+  name: string;
+  role: string;
+  talk: string;
+  summary: string;
+  day: "Friday" | "Saturday";
+  mode: "In person" | "Virtual";
+  photo: string;
+  keynote?: boolean;
+};
 
-export const hackathonWeeks = [
-  ["Week 1", "General training", "Screened applicants with programming experience learn core quantum computing methods together."],
-  ["Week 2", "Track split", "Participants choose one of the three categories and continue in focused groups."],
-  ["Week 3", "Hackathon begins", "Teams start building towards their track benchmarks with mentor support."],
-  ["Week 4", "Final push", "Projects are completed and submitted ahead of Fall Fest."],
-] as const;
+export const speakers: Speaker[] = [
+  {
+    name: "Powel Gora",
+    role: "Founder, QWorld",
+    talk: "Pushing Beyond the Limits",
+    summary:
+      "Opening our minds to the areas and use cases where young Nigerians can stand out and contribute to innovation in quantum computing.",
+    day: "Saturday",
+    mode: "Virtual",
+    photo: "/speakers/powel-gora.jpg",
+    keynote: true,
+  },
+  {
+    name: "Favour Alfred",
+    role: "Delegate, African Quantum Consortium",
+    talk: "Quantum Education & Capacity Building",
+    summary:
+      "Fostering a research culture among Nigerian students: navigating grad school applications, exploring quantum startup creation, and finding related opportunities.",
+    day: "Saturday",
+    mode: "In person",
+    photo: "/speakers/favour-alfred.jpg",
+  },
+  {
+    name: "Dr Fadodun",
+    role: "Faculty Advisor, OAU",
+    talk: "Rudiments of Quantum Computing",
+    summary:
+      "A technical session on the physics and mathematics behind quantum computing, launching us into the technical sessions.",
+    day: "Saturday",
+    mode: "In person",
+    photo: "/team/dr-fadodun.jpg",
+  },
+  {
+    name: "IBM Quantum Speaker",
+    role: "IBM Quantum · To be announced",
+    talk: "Getting Started in Quantum Computing",
+    summary: "Addressing the young generation on how to take their first real steps into quantum computing.",
+    day: "Saturday",
+    mode: "Virtual",
+    photo: "/speakers/ibm.jpg",
+  },
+  {
+    name: "Mr Ini Ukut",
+    role: "Head, QNigeria",
+    talk: "Career Paths in Quantum Computing",
+    summary: "The career paths quantum computing opens up, and how students can start walking them early.",
+    day: "Friday",
+    mode: "Virtual",
+    photo: "/speakers/ini-ukut.jpg",
+  },
+];
 
 /** `photo` points at a file in `public/team/`. Drop the image in with the
  *  matching name and it appears automatically; until then the card falls
@@ -78,9 +127,11 @@ export const hackathonWeeks = [
 export type TeamMember = { name: string; role: string; photo: string };
 
 export const team: TeamMember[] = [
+  { name: "Adesina Lekan", role: "Lead Organiser, Qiskit Fall Fest OAU 2026", photo: "/team/Limitless.jpeg" },
+  { name: "Temitope Akinsunmade", role: "Lead, GDG on Campus OAU", photo: "/team/sunmade.jpeg" },
+  { name: "Oreoluwa Adigun", role: "Quantum Computing Lead, GDG on Campus OAU", photo: "/team/oreoluwa-adigun.jpg" },
   { name: "Dr Fadodun", role: "Faculty advisor", photo: "/team/dr-fadodun.jpg" },
-  { name: "Lekan Adesina", role: "Organising team", photo: "/team/Limitless.jpeg" },
-  { name: "Temitope Akinsunmade", role: "Organising team", photo: "/team/sunmade.jpeg" },
+  { name: "Ovie Ohwoka", role: "Organising team", photo: "/team/ovie-ohwoka.jpg" },
   { name: "Blessing Agbor", role: "Organising team", photo: "/team/blessing.jpeg" },
   { name: "Joseph Oyetunde", role: "Organising team", photo: "/team/codegod.jpg" },
   { name: "Olamide Lawal", role: "Organising team", photo: "/team/olamide_lawal.jpg" },

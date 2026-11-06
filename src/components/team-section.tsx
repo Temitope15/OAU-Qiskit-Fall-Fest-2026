@@ -40,7 +40,7 @@ export function TeamSection() {
         <div className="grid md:grid-cols-[1fr_0.8fr] gap-10 items-end mb-16">
           <h2 className="text-5xl md:text-6xl font-black leading-tight tracking-tight">The people organising Fall Fest at OAU.</h2>
           <p className="text-xl font-bold text-gray-700 leading-relaxed bg-[#f1f3f4] p-6 border-[4px] border-black rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform rotate-1">
-            A student-led team with faculty support, working with IBM Quantum and GDG on Campus OAU. Full roles and photographs will be added shortly.
+            A student-led team with faculty support, organising Qiskit Fall Fest with IBM Quantum and GDG on Campus OAU.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

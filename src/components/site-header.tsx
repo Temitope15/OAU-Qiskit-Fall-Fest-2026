@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Atom } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { registerUrl } from "@/lib/events";
 
@@ -8,7 +8,6 @@ const links = [
   ["2024", "/2024"],
   ["2025", "/2025"],
   ["This year", "/"],
-  ["Hackathon", "/hackathon"],
 ] as const;
 
 export function SiteHeader() {
@@ -17,7 +16,7 @@ export function SiteHeader() {
       <div className="site-container flex h-18 items-center justify-between gap-5">
         <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Qiskit Fall Fest OAU home">
           {/* <span className="brand-mark"><Atom aria-hidden="true" /></span> */}
-          <img src="icon.svg" />
+          <img src="/icon.svg" alt="" />
           <span className="font-black text-sm sm:text-base text-black uppercase tracking-tight hidden md:inline-block">Qiskit Fall Fest <span className="text-primary">OAU</span></span>
         </Link>
         <nav className="scrollbar-none flex items-center gap-1 overflow-x-auto" aria-label="Main navigation">
@@ -43,7 +42,7 @@ export function SiteHeader() {
         </nav>
         <div className="flex items-center gap-2">
           <Button asChild className="bg-[#8B5CF6] text-white hover:bg-[#7c3aed] border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] font-bold">
-            <a href={registerUrl} target="_blank" rel="noreferrer">Register <ArrowUpRight /></a>
+            <Link to={registerUrl}>Register <ArrowUpRight /></Link>
           </Button>
         </div>
 
